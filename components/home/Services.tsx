@@ -157,10 +157,14 @@ export default function Services() {
       })
     }, stepDuration)
     
+    // Save references to intervals for cleanup
+    const progressIntervalRef = progressInterval.current;
+    const rotationIntervalRef = rotationInterval.current;
+    
     // Cleanup on unmount
     return () => {
-      if (progressInterval.current) clearInterval(progressInterval.current)
-      if (rotationInterval.current) clearTimeout(rotationInterval.current)
+      if (progressIntervalRef) clearInterval(progressIntervalRef)
+      if (rotationIntervalRef) clearTimeout(rotationIntervalRef)
     }
   }, [activeNav])
   

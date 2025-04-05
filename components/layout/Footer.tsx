@@ -53,7 +53,7 @@ export default function Footer() {
               href="/contact" 
               className="inline-block mt-6 px-8 py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-700 hover:to-blue-600 transition-all duration-300 text-white font-medium"
             >
-              Let's Work Together
+              Let&apos;s Work Together
             </Link>
           </div>
           

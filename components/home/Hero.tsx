@@ -1,10 +1,7 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { DotLottieReact } from '@lottiefiles/dotlottie-react'
-import { Globe } from "@/registry/magicui/globe"
 
 // Text animation variants
 const textVariants = {
