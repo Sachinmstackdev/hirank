@@ -85,7 +85,10 @@ module.exports = {
   		},
   		fontFamily: {
   			sans: [
-  				'var(--font-inter)'
+  				'var(--font-plus-jakarta-sans)',
+                'var(--font-inter)',
+                'system-ui',
+                'sans-serif'
   			],
   			display: [
   				'var(--font-cabinet-grotesk)'

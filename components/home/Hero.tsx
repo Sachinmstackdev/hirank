@@ -2,133 +2,148 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 
-// Text animation variants
-const textVariants = {
-  hidden: { opacity: 0 },
-  visible: (i: number) => ({
-    opacity: 1,
-    transition: {
-      delay: 0.2 + i * 0.1,
-    },
-  }),
-}
+// Icon component for the lightning bolt
+const LightningIcon = () => (
+  <div className="inline-flex items-center justify-center w-16 h-16 bg-black rounded-full mx-2 align-middle">
+    <svg 
+      width="28" 
+      height="28" 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
+      className="text-white"
+    >
+      <path d="M13 2L4.09347 12.6356C3.74552 13.0462 3.57155 13.2515 3.56387 13.4278C3.55731 13.5805 3.62498 13.7272 3.7497 13.8281C3.89398 13.9434 4.16267 13.9434 4.70004 13.9434H12L11 22L19.9065 11.3644C20.2545 10.9538 20.4284 10.7485 20.4361 10.5722C20.4427 10.4195 20.375 10.2728 20.2503 10.1719C20.106 10.0566 19.8373 10.0566 19.3 10.0566H12L13 2Z" 
+        stroke="currentColor" 
+        strokeWidth="2" 
+        strokeLinecap="round" 
+        strokeLinejoin="round"
+      />
+    </svg>
+  </div>
+)
 
-const gradientTextVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.4,
-      duration: 0.6,
-      ease: "easeOut"
-    }
-  }
-}
+// Verified badge component
+const VerifiedBadge = () => (
+  <svg className="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+  </svg>
+)
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[100svh] flex items-center justify-center bg-gradient-to-br from-white via-blue-50 to-purple-50 overflow-hidden pt-16 sm:pt-20 px-4">
-      {/* Background blur effects */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-[300px] sm:w-[400px] md:w-[500px] h-[300px] sm:h-[400px] md:h-[500px] bg-blue-200/30 rounded-full blur-[80px] sm:blur-[100px]" />
-        <div className="absolute bottom-0 right-1/4 w-[300px] sm:w-[400px] md:w-[500px] h-[300px] sm:h-[400px] md:h-[500px] bg-purple-200/30 rounded-full blur-[80px] sm:blur-[100px]" />
-      </div>
+    <section className="relative bg-[#f5f8ff] py-28 md:py-40 overflow-hidden">
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <div className="flex flex-col items-center">
+          {/* Client trust indicators */}
+          <div className="flex items-center mb-12 gap-4 mt-6">
+            <div className="flex -space-x-4">
+              <div className="w-12 h-12 rounded-full border-2 border-white overflow-hidden">
+                <Image 
+                  src="/avatars/avatar-1.svg" 
+                  alt="Customer" 
+                  width={48} 
+                  height={48} 
+                  className="object-cover"
+                />
+              </div>
+              <div className="w-12 h-12 rounded-full border-2 border-white overflow-hidden">
+                <Image 
+                  src="/avatars/avatar-2.svg" 
+                  alt="Customer" 
+                  width={48} 
+                  height={48}
+                  className="object-cover"
+                />
+              </div>
+              <div className="w-12 h-12 rounded-full border-2 border-white overflow-hidden">
+                <Image 
+                  src="/avatars/avatar-3.svg" 
+                  alt="Customer" 
+                  width={48} 
+                  height={48}
+                  className="object-cover"
+                />
+              </div>
+            </div>
+            <div className="flex flex-col ml-2">
+              <div className="flex items-center">
+                <span className="text-gray-800 font-medium flex items-center">
+                  <VerifiedBadge /> 
+                  <span className="ml-1">Trusted by 200+ brands</span>
+                </span>
+              </div>
+              <p className="text-gray-500 text-sm flex items-center gap-1">
+                <span className="font-medium text-green-600">97%</span> satisfaction rate
+              </p>
+            </div>
+          </div>
 
-      {/* Content */}
-      <div className="container mx-auto z-10">
-        <div className="max-w-[85vw] sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto text-center">
-          {/* Main content */}
-          <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-900 leading-tight"
-          >
-            <motion.span 
-              className="inline-block"
-              initial="hidden"
-              animate="visible"
-              custom={0}
-              variants={textVariants}
-            >
-              Automate 
-            </motion.span>{" "}
-            <motion.span 
-              className="inline-block"
-              initial="hidden"
-              animate="visible"
-              custom={1}
-              variants={textVariants}
-            >
-              Profits 
-            </motion.span>{" "}
-            <motion.span 
-              className="inline-block"
-              initial="hidden"
-              animate="visible"
-              custom={2}
-              variants={textVariants}
-            >
-              with
-            </motion.span>
-            <motion.span 
-              className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 block mt-1"
-              initial="hidden"
-              animate="visible"
-              variants={gradientTextVariants}
-            >
-              AI-Powered e-Commerce
-            </motion.span>
-          </motion.h1>
-          
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto"
-          >
-            Scale your business effortlessly with cutting-edge AI automation, smart chatbots, and data-driven marketing.
-          </motion.p>
+          {/* Main heading */}
+          <div className="text-center max-w-4xl mx-auto mb-10">
+            <h1 className="text-3xl sm:text-4xl md:text-[3.25rem] font-medium text-gray-900 leading-[1.2] tracking-tight mb-8">
+              <span className="block mb-4">Everything You Need to Grow  </span>
+              <span className="block">Your E-commerce Business</span>
+            </h1>
+            <p className="text-lg sm:text-xl text-gray-600 mb-16 max-w-2xl mx-auto">
+              Unlock growth with high-converting websites, performance marketing,<br className="hidden md:block" />
+              AI automation, and performance marketing for modern e-commerce brands.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-24">
+              <Link
+                href="/contact"
+                className="bg-[#4F7DF3] hover:bg-[#3968e7] text-white px-6 py-3 rounded-full text-lg font-medium transition-all duration-300 inline-flex items-center justify-center gap-2 w-full sm:w-auto"
+              >
+                <span>Get started</span>
+                <svg className="w-5 h-5 ml-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </Link>
+            </div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
-            <Link
-              href="/contact"
-              className="bg-blue-600 text-white px-8 py-4 rounded-full text-base font-medium hover:bg-blue-700 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 w-full sm:w-auto"
-            >
-              Get Started
-            </Link>
-            <Link
-              href="/portfolio"
-              className="px-8 py-4 rounded-full text-gray-600 hover:text-gray-900 transition-colors border border-gray-300 hover:border-gray-400 w-full sm:w-auto"
-            >
-              View Portfolio
-            </Link>
-          </motion.div>
+          {/* Partner logos */}
+          <div className="flex flex-wrap items-center justify-center gap-10 md:gap-20 opacity-60 max-w-4xl mx-auto">
+            <div className="w-24 h-8 flex items-center justify-center grayscale">
+              <img 
+                src="/logos/logo-1.svg" 
+                alt="Partner" 
+                className="max-h-full" 
+              />
+            </div>
+            <div className="w-24 h-8 flex items-center justify-center grayscale">
+              <img 
+                src="/logos/logo-2.svg" 
+                alt="Partner" 
+                className="max-h-full"
+              />
+            </div>
+            <div className="w-24 h-8 flex items-center justify-center grayscale">
+              <img 
+                src="/logos/logo-3.svg" 
+                alt="Partner" 
+                className="max-h-full"
+              />
+            </div>
+            <div className="w-24 h-8 flex items-center justify-center grayscale">
+              <img 
+                src="/logos/logo-4.svg" 
+                alt="Partner" 
+                className="max-h-full"
+              />
+            </div>
+            <div className="w-24 h-8 flex items-center justify-center grayscale">
+              <img 
+                src="/logos/logo-5.svg" 
+                alt="Partner" 
+                className="max-h-full"
+              />
+            </div>
+          </div>
         </div>
-
-        {/* Globe Visualization */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.7 }}
-          className="mt-16 sm:mt-20 mb-12"
-        >
-         
-        </motion.div>
-
-        {/* Service cards */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.9 }}
-          className="max-w-xs xs:max-w-sm sm:max-w-2xl md:max-w-4xl lg:max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4 mt-8 sm:mt-12"
-        >
-          
-        </motion.div>
       </div>
     </section>
   )

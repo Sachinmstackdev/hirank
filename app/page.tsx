@@ -5,7 +5,7 @@ import Services from '@/components/home/Services'
 import Portfolio from '@/components/home/Portfolio'
 import WhyChooseUs from '@/components/home/WhyChooseUs'
 import Testimonials from '@/components/home/Testimonials'
-import CTASection from '@/components/home/CTASection'
+import FAQSection from '@/components/home/FAQSection'
 import Loading from '@/components/Loading'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
@@ -43,7 +43,7 @@ export default function Home() {
         <Portfolio />
         <WhyChooseUs />
         <Testimonials />
-        <CTASection />
+        <FAQSection />
       </Suspense>
       <Footer />
     </main>

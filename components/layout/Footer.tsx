@@ -27,120 +27,72 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-black text-white pt-16 pb-8 relative overflow-hidden">
-      {/* Subtle gradient overlay */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
-        <div className="absolute top-0 -right-1/4 w-1/2 h-1/2 bg-purple-600 rounded-full blur-[120px]"></div>
-        <div className="absolute bottom-0 -left-1/4 w-1/2 h-1/2 bg-blue-500 rounded-full blur-[120px]"></div>
-      </div>
-      
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-16">
-          {/* Left column - Company info */}
-          <div className="md:col-span-5">
-            <div className="mb-6">
-              <h2 className="text-3xl font-bold mb-2">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-400">HiRank</span>
-                <sup className="text-sm text-purple-400">TM</sup>
-              </h2>
-              <p className="text-xl text-gray-300 mb-4">Your Preferred Design Partner</p>
-              <p className="text-gray-400 max-w-md">
-                An integrated approach, competent organization of processes and personal responsibility of each specialist. We help you implement a project of any complexity.
-              </p>
+    <footer className="bg-white py-20">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-x-16 gap-y-10">
+          {/* Logo and description */}
+          <div className="md:col-span-4">
+            <div className="flex items-center gap-2 mb-6">
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span className="text-xl font-medium">HiRank</span>
             </div>
-            
+            <p className="text-gray-600 mb-8 text-lg">
+              AI powered solutions for<br />automation and growth
+            </p>
             <Link 
-              href="/contact" 
-              className="inline-block mt-6 px-8 py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-700 hover:to-blue-600 transition-all duration-300 text-white font-medium"
+              href="/get-started" 
+              className="inline-flex items-center px-6 py-3 bg-[#4177DC] text-white rounded-full text-sm hover:bg-blue-600 transition-colors"
             >
-              Let&apos;s Work Together
+              Get started
+              <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M9 5l7 7-7 7" />
+              </svg>
             </Link>
           </div>
-          
-          {/* Middle column - Platform */}
-          <div className="md:col-span-2 md:col-start-7">
-            <h4 className="text-lg font-medium mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Platform</h4>
+
+          {/* Quick links */}
+          <div className="md:col-span-2 md:col-start-6">
+            <h4 className="text-base font-medium mb-6">Quick links</h4>
             <ul className="space-y-4">
-              <li><Link href="/about" className="text-gray-400 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-purple-400 hover:to-blue-400 transition-colors">About</Link></li>
-              <li><Link href="/features" className="text-gray-400 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-purple-400 hover:to-blue-400 transition-colors">Features</Link></li>
-              <li><Link href="/pricing" className="text-gray-400 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-purple-400 hover:to-blue-400 transition-colors">Pricing & Plans</Link></li>
-              <li><Link href="/contact" className="text-gray-400 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-purple-400 hover:to-blue-400 transition-colors">Contact</Link></li>
+              <li><Link href="/about" className="text-gray-500 hover:text-gray-800">About us</Link></li>
+              <li><Link href="/services" className="text-gray-500 hover:text-gray-800">Services</Link></li>
+              <li><Link href="/features" className="text-gray-500 hover:text-gray-800">Features</Link></li>
+              <li><Link href="/pricing" className="text-gray-500 hover:text-gray-800">Pricing</Link></li>
+              <li><Link href="/testimonial" className="text-gray-500 hover:text-gray-800">Testimonial</Link></li>
             </ul>
           </div>
-          
-          {/* Right column - Resources */}
+
+          {/* Services */}
           <div className="md:col-span-2">
-            <h4 className="text-lg font-medium mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Resources</h4>
+            <h4 className="text-base font-medium mb-6">Services</h4>
             <ul className="space-y-4">
-              <li><Link href="/account" className="text-gray-400 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-purple-400 hover:to-blue-400 transition-colors">Account</Link></li>
-              <li><Link href="/tools" className="text-gray-400 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-purple-400 hover:to-blue-400 transition-colors">Tools</Link></li>
-              <li><Link href="/newsletter" className="text-gray-400 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-purple-400 hover:to-blue-400 transition-colors">Newsletter</Link></li>
-              <li><Link href="/faq" className="text-gray-400 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-purple-400 hover:to-blue-400 transition-colors">FAQ</Link></li>
+              <li><Link href="/content-creation" className="text-gray-500 hover:text-gray-800">Content Creation</Link></li>
+              <li><Link href="/development" className="text-gray-500 hover:text-gray-800">Development</Link></li>
+              <li><Link href="/automation" className="text-gray-500 hover:text-gray-800">Automation</Link></li>
+              <li><Link href="/llm-development" className="text-gray-500 hover:text-gray-800">LLM Development</Link></li>
             </ul>
           </div>
-          
-          {/* Far right column - Legals */}
+
+          {/* Follow us */}
           <div className="md:col-span-2">
-            <h4 className="text-lg font-medium mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Legals</h4>
+            <h4 className="text-base font-medium mb-6">Follow us</h4>
             <ul className="space-y-4">
-              <li><Link href="/guides" className="text-gray-400 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-purple-400 hover:to-blue-400 transition-colors">Guides</Link></li>
-              <li><Link href="/terms" className="text-gray-400 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-purple-400 hover:to-blue-400 transition-colors">Terms & Conditions</Link></li>
-              <li><Link href="/privacy" className="text-gray-400 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-purple-400 hover:to-blue-400 transition-colors">Privacy Policy</Link></li>
-              <li><Link href="/licensing" className="text-gray-400 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-purple-400 hover:to-blue-400 transition-colors">Licensing</Link></li>
+              <li><Link href="https://instagram.com" className="text-gray-500 hover:text-gray-800">Instagram</Link></li>
+              <li><Link href="https://twitter.com" className="text-gray-500 hover:text-gray-800">Twitter</Link></li>
+              <li><Link href="https://facebook.com" className="text-gray-500 hover:text-gray-800">Facebook</Link></li>
+              <li><Link href="https://linkedin.com" className="text-gray-500 hover:text-gray-800">LinkedIn</Link></li>
             </ul>
           </div>
         </div>
-        
-        {/* Social media section */}
-        <div className="mt-16 flex flex-col md:flex-row justify-between items-start md:items-center">
-          <div className="text-gray-500 text-sm mb-6 md:mb-0">
-            &copy; {new Date().getFullYear()} HiRank Solutions. All rights reserved.
+
+        {/* Bottom section */}
+        <div className="mt-20 pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center">
+          <div className="text-gray-500 mb-4 md:mb-0">
+            © {new Date().getFullYear()} All rights reserved to Hirank™
           </div>
           
-          <div className="flex items-center">
-            <span className="text-gray-400 mr-6">Follow us on:</span>
-            <div className="flex space-x-4">
-              {socialIcons.map((social, index) => (
-                <a 
-                  key={index} 
-                  href="#" 
-                  aria-label={`Follow us on ${social.name}`}
-                  className="text-gray-400 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-purple-400 hover:to-blue-400 transition-colors"
-                >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox={social.viewBox}>
-                    <path d={social.icon} />
-                  </svg>
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-        
-        {/* Optional newsletter section - only visible on mobile */}
-        <div className="md:hidden mt-8 pt-8 border-t border-gray-800">
-          <h4 className="text-lg font-medium mb-3">Stay Updated</h4>
-          {subscribed ? (
-            <div className="text-green-400 text-sm">
-              Thanks for subscribing! Check your inbox soon.
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="flex gap-3">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your email address"
-                className="px-4 py-2 rounded-md bg-gray-800 text-white placeholder-gray-500 flex-grow focus:outline-none focus:ring-1 focus:ring-gray-400"
-                required
-              />
-              <button 
-                type="submit" 
-                className="px-4 py-2 rounded-md bg-gradient-to-r from-purple-600 to-blue-500 text-white font-medium"
-              >
-                Subscribe
-              </button>
-            </form>
-          )}
         </div>
       </div>
     </footer>

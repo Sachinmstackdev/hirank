@@ -5,80 +5,84 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 export default function Header() {
-  const [isVisible, setIsVisible] = useState(true)
-  const [lastScrollY, setLastScrollY] = useState(0)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-
+  const [showHeader, setShowHeader] = useState(true)
+  
   useEffect(() => {
-    const controlNavbar = () => {
-      const currentScrollY = window.scrollY
-      
-      if (currentScrollY > lastScrollY) { // scrolling down
-        setIsVisible(false)
-      } else { // scrolling up
-        setIsVisible(true)
-      }
-
-      setLastScrollY(currentScrollY)
+    const handleScroll = () => {
+      // Show header only when at the very top of the page
+      setShowHeader(window.scrollY < 100)
     }
-
-    window.addEventListener('scroll', controlNavbar)
-
-    // cleanup function
-    return () => {
-      window.removeEventListener('scroll', controlNavbar)
-    }
-  }, [lastScrollY])
+    
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const navItems = [
-    { href: '/', label: 'Home' },
-    { href: '/work', label: 'Our Work' },
-    { href: '/about', label: 'About Us' },
-    { href: '/privacy', label: 'Privacy' },
-    { href: '/contact', label: 'Contact' },
+    { href: '/about', label: 'About' },
+    { href: '/services', label: 'Services' },
+    { href: '/pricing', label: 'Pricing' },
+    { href: '/testimonial', label: 'Testimonial' },
+    { href: '/process', label: 'Process' },
   ]
 
   return (
     <>
-      {/* Animated Header with Navbar */}
+      {/* Header that only shows at the top of the page */}
       <motion.header 
-        className="fixed w-full z-40 flex justify-center pt-6"
-        initial={{ y: 0 }}
-        animate={{ y: isVisible ? 0 : -100 }}
+        className={`fixed w-full z-40 py-5 ${showHeader ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         transition={{ duration: 0.3 }}
       >
-        <div className="bg-white/70 backdrop-blur-md rounded-full px-4 sm:px-6 w-[95%] sm:w-auto">
-          <nav className="flex items-center justify-between h-14">
-            <Link href="/" className="group">
-              <span className="text-xl sm:text-2xl font-semibold transition-all duration-300 group-hover:text-purple-500 group-hover:drop-shadow-[0_0_10px_rgba(168,85,247,0.5)] group-hover:filter-none">
-                HiRank
-              </span>
+        <div className="container max-w-7xl mx-auto px-6 md:px-8">
+          <nav className="flex items-center justify-between">
+            {/* Logo */}
+            <Link href="/" className="flex items-center gap-2">
+              <div className="flex items-center justify-center w-8 h-8">
+                <svg 
+                  width="20" 
+                  height="20" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="text-black"
+                >
+                  <path d="M13 2L4.09347 12.6356C3.74552 13.0462 3.57155 13.2515 3.56387 13.4278C3.55731 13.5805 3.62498 13.7272 3.7497 13.8281C3.89398 13.9434 4.16267 13.9434 4.70004 13.9434H12L11 22L19.9065 11.3644C20.2545 10.9538 20.4284 10.7485 20.4361 10.5722C20.4427 10.4195 20.375 10.2728 20.2503 10.1719C20.106 10.0566 19.8373 10.0566 19.3 10.0566H12L13 2Z" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+              <span className="text-xl font-medium">HiRank</span>
             </Link>
 
-            {/* Desktop Navigation */}
-            <ul className="hidden md:flex items-center space-x-4 lg:space-x-8 ml-8">
+            {/* Desktop Navigation - Centered */}
+            <ul className="hidden md:flex items-center absolute left-1/2 transform -translate-x-1/2">
               {navItems.map((item) => (
                 <li key={item.href}>
                   <Link 
                     href={item.href} 
-                    className="text-gray-600 text-sm relative group"
+                    className="text-[#4B5563] hover:text-[#111827] text-base px-5 font-normal transition-colors"
                   >
-                    <span className="transition-colors duration-300 group-hover:text-gray-900">
-                      {item.label}
-                    </span>
-                    <span className="absolute -bottom-[18px] left-1/2 -translate-x-1/2 text-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">•</span>
+                    {item.label}
                   </Link>
                 </li>
               ))}
-              <li className="ml-4">
-                <Link 
-                  href="/contact"
-                  className="bg-gray-900 text-white px-4 py-2 rounded-full text-sm transition-all duration-300 hover:bg-gray-800 hover:scale-105 hover:shadow-md"
-                >
-                  Get in Touch
-                </Link>
-              </li>
             </ul>
+
+            {/* Call to Action Button */}
+            <div className="hidden md:block">
+              <Link 
+                href="/contact"
+                className="bg-[#4F7DF3] hover:bg-[#3968e7] text-white px-7 py-3 rounded-full text-base font-medium transition-colors inline-flex items-center justify-center gap-2"
+              >
+                <span>Get started</span>
+                <svg className="w-5 h-5 ml-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </Link>
+            </div>
 
             {/* Mobile Menu Button */}
             <button 
@@ -115,10 +119,13 @@ export default function Header() {
           ))}
           <Link 
             href="/contact"
-            className="bg-gray-900 text-white px-6 py-3 rounded-full text-lg transition-all duration-300 hover:bg-gray-800 hover:scale-105 hover:shadow-md"
+            className="bg-[#4F7DF3] hover:bg-[#3968e7] text-white px-7 py-3 rounded-full text-base font-medium transition-colors flex items-center gap-2"
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            Get in Touch
+            <span>Get started</span>
+            <svg className="w-5 h-5 ml-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
           </Link>
         </div>
       </motion.div>
