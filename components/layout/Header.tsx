@@ -23,7 +23,7 @@ export default function Header() {
     { href: '/services', label: 'Services' },
     { href: '/pricing', label: 'Pricing' },
     { href: '/testimonial', label: 'Testimonial' },
-    { href: '/process', label: 'Process' },
+    { href: '/contact', label: 'Contact' },
   ]
 
   return (

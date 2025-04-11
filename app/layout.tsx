@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
+import { LeadMagnet } from '@/components/lead-magnet/LeadMagnet'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -56,6 +57,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         {children}
+        <LeadMagnet />
       </body>
     </html>
   )

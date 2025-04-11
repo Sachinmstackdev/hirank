@@ -9,18 +9,18 @@ import Link from 'next/link'
 const services = [
   {
     id: 1,
-    title: "Content creation",
+    title: "Platform development",
     number: "01",
-    description: "Our AI-driven solutions generate high-quality, brand-aligned content to engage your audience effortlessly.",
-    image: "/images/services/content-creation.png",
+    description: "We build  platforms using WordPress, Shopify, Framer, or custom-coded e-commerce solutions tailored for your business needs.",
+    image: "https://res.cloudinary.com/twosapiens/image/upload/v1744370459/Untitled_design_13_ztrqvt.png",
     bgColor: "#FFFFFF"
   },
   {
     id: 2,
-    title: "Chatbot development",
+    title: "Marketplace Product Listing",
     number: "02",
-    description: "We create intelligent chatbots powered by advanced NLP to grow customer interactions & operations.",
-    image: "/images/services/chatbot-development.png",
+    description: "We list your products on Amazon, Flipkart, Myntra, and Blinkit with A+ content, Premium  images , and seo friendly buyer intant keywords. ",
+    image: "https://res.cloudinary.com/twosapiens/image/upload/v1744371456/Untitled_design_14_uogmf3.png",
     bgColor: "#FFFFFF"
   },
   {
@@ -28,15 +28,15 @@ const services = [
     title: "Workflow automations",
     number: "03",
     description: "We automate repetitive tasks to improve operational efficiency, grow productivity, errors, and save time.",
-    image: "/images/services/workflow-automations.png",
+    image: "https://res.cloudinary.com/twosapiens/image/upload/v1744385638/Chatbot_1_gpxrdl.png",
     bgColor: "#F5F8FF"
   },
   {
     id: 4,
-    title: "LLM development",
+    title: "ROI-focused ad campaigns",
     number: "04",
-    description: "We build Large Language Models to revolutionize business processes data & interacts with customers.",
-    image: "/images/services/llm-development.png",
+    description: "Our strategies focus on ROI, scalability, and customer acquisition, combining paid media with expert social media management to grow your brand across every channel.",
+    image: "https://res.cloudinary.com/twosapiens/image/upload/v1744385390/performance-marketing_ooosur.png",
     bgColor: "#F5F8FF"
   }
 ]
