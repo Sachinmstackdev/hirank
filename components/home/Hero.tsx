@@ -42,7 +42,7 @@ export default function Hero() {
             <div className="flex -space-x-4">
               <div className="w-12 h-12 rounded-full border-2 border-white overflow-hidden">
                 <Image 
-                  src="/avatars/avatar-1.svg" 
+                  src="https://res.cloudinary.com/twosapiens/image/upload/v1744477382/Ambro-bites-logo-banner_d9zmsv.png"
                   alt="Customer" 
                   width={48} 
                   height={48} 
@@ -51,7 +51,7 @@ export default function Hero() {
               </div>
               <div className="w-12 h-12 rounded-full border-2 border-white overflow-hidden">
                 <Image 
-                  src="/avatars/avatar-2.svg" 
+                  src="https://res.cloudinary.com/twosapiens/image/upload/v1744477383/VK-pg-hostel-logo-banner_emq6ax.png" 
                   alt="Customer" 
                   width={48} 
                   height={48}
@@ -60,7 +60,7 @@ export default function Hero() {
               </div>
               <div className="w-12 h-12 rounded-full border-2 border-white overflow-hidden">
                 <Image 
-                  src="/avatars/avatar-3.svg" 
+                  src="https://res.cloudinary.com/twosapiens/image/upload/v1744477383/Two-Sapiens-logo-banner_efgx9t.png" 
                   alt="Customer" 
                   width={48} 
                   height={48}
@@ -72,7 +72,7 @@ export default function Hero() {
               <div className="flex items-center">
                 <span className="text-gray-800 font-medium flex items-center">
                   <VerifiedBadge /> 
-                  <span className="ml-1">Trusted by 200+ brands</span>
+                  <span className="ml-1">Trusted by Many brands</span>
                 </span>
               </div>
               <p className="text-gray-500 text-sm flex items-center gap-1">
@@ -106,41 +106,43 @@ export default function Hero() {
           </div>
 
           {/* Partner logos */}
-          <div className="flex flex-wrap items-center justify-center gap-10 md:gap-20 opacity-60 max-w-4xl mx-auto">
-            <div className="w-24 h-8 flex items-center justify-center grayscale">
-              <img 
-                src="/logos/logo-1.svg" 
-                alt="Partner" 
-                className="max-h-full" 
-              />
-            </div>
-            <div className="w-24 h-8 flex items-center justify-center grayscale">
-              <img 
-                src="/logos/logo-2.svg" 
-                alt="Partner" 
-                className="max-h-full"
-              />
-            </div>
-            <div className="w-24 h-8 flex items-center justify-center grayscale">
-              <img 
-                src="/logos/logo-3.svg" 
-                alt="Partner" 
-                className="max-h-full"
-              />
-            </div>
-            <div className="w-24 h-8 flex items-center justify-center grayscale">
-              <img 
-                src="/logos/logo-4.svg" 
-                alt="Partner" 
-                className="max-h-full"
-              />
-            </div>
-            <div className="w-24 h-8 flex items-center justify-center grayscale">
-              <img 
-                src="/logos/logo-5.svg" 
-                alt="Partner" 
-                className="max-h-full"
-              />
+          <div className="relative max-w-5xl mx-auto px-4 sm:px-0">
+            <div className="grid grid-cols-2 sm:grid-cols-5 md:gap-10 gap-8 place-items-center">
+              <div className="w-32 h-8 sm:h-10 flex items-center justify-center">
+                <img 
+                  src="/patner-logos/logos--meta.svg" 
+                  alt="Meta" 
+                  className="max-h-full" 
+                />
+              </div>
+              <div className="w-32 h-8 sm:h-10 flex items-center justify-center">
+                <img 
+                  src="/patner-logos/logos--google.svg" 
+                  alt="Google" 
+                  className="max-h-full"
+                />
+              </div>
+              <div className="w-32 h-8 sm:h-10 flex items-center justify-center">
+                <img 
+                  src="/patner-logos/logos--supabase.svg" 
+                  alt="Supabase" 
+                  className="max-h-full"
+                />
+              </div>
+              <div className="w-32 h-8 sm:h-10 flex items-center justify-center">
+                <img 
+                  src="/patner-logos/logos--woocommerce.svg" 
+                  alt="WooCommerce" 
+                  className="max-h-full"
+                />
+              </div>
+              <div className="w-32 h-8 sm:h-10 flex items-center justify-center col-span-2 sm:col-span-1">
+                <img 
+                  src="/patner-logos/logos--openai.svg" 
+                  alt="OpenAI" 
+                  className="max-h-full max-w-[120px] sm:max-w-full"
+                />
+              </div>
             </div>
           </div>
         </div>

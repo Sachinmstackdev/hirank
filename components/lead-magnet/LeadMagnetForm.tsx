@@ -1,15 +1,17 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, RefObject } from 'react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
 interface LeadMagnetFormProps {
   onSubmit: (data: { name: string; email: string; website: string }) => void
   className?: string
+  formRef?: RefObject<HTMLFormElement | null>
+  showButton?: boolean
 }
 
-export function LeadMagnetForm({ onSubmit, className = '' }: LeadMagnetFormProps) {
+export function LeadMagnetForm({ onSubmit, className = '', formRef, showButton = true }: LeadMagnetFormProps) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -22,15 +24,15 @@ export function LeadMagnetForm({ onSubmit, className = '' }: LeadMagnetFormProps
   }
 
   return (
-    <form onSubmit={handleSubmit} className={`w-full space-y-4 ${className}`}>
-      <div className="space-y-3">
+    <form ref={formRef} onSubmit={handleSubmit} className={`w-full space-y-4 ${className}`}>
+      <div className="space-y-4">
         <Input
           type="text"
           placeholder="Your Name"
           value={formData.name}
           onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
           required
-          className="w-full h-11 sm:h-12 px-4 bg-gray-50/50 border-gray-200 rounded-lg sm:rounded-xl focus:ring-[#4F7DF3] focus:border-[#4F7DF3] transition-all duration-200 text-sm sm:text-base"
+          className="w-full h-14 px-5 border border-gray-200 rounded-lg text-base"
         />
         <Input
           type="email"
@@ -38,7 +40,7 @@ export function LeadMagnetForm({ onSubmit, className = '' }: LeadMagnetFormProps
           value={formData.email}
           onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
           required
-          className="w-full h-11 sm:h-12 px-4 bg-gray-50/50 border-gray-200 rounded-lg sm:rounded-xl focus:ring-[#4F7DF3] focus:border-[#4F7DF3] transition-all duration-200 text-sm sm:text-base"
+          className="w-full h-14 px-5 border border-gray-200 rounded-lg text-base"
         />
         <Input
           type="url"
@@ -46,15 +48,17 @@ export function LeadMagnetForm({ onSubmit, className = '' }: LeadMagnetFormProps
           value={formData.website}
           onChange={(e) => setFormData(prev => ({ ...prev, website: e.target.value }))}
           required
-          className="w-full h-11 sm:h-12 px-4 bg-gray-50/50 border-gray-200 rounded-lg sm:rounded-xl focus:ring-[#4F7DF3] focus:border-[#4F7DF3] transition-all duration-200 text-sm sm:text-base"
+          className="w-full h-14 px-5 border border-gray-200 rounded-lg text-base"
         />
       </div>
-      <Button 
-        type="submit" 
-        className="w-full h-11 sm:h-12 bg-[#4F7DF3] hover:bg-[#3968e7] text-white rounded-lg sm:rounded-xl font-medium transition-all duration-200 shadow-lg shadow-[#4F7DF3]/20 hover:shadow-[#4F7DF3]/30 text-sm sm:text-base mt-2"
-      >
-        Get Free Audit →
-      </Button>
+      {showButton && (
+        <Button 
+          type="submit" 
+          className="w-full h-14 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium shadow-md text-base mt-4"
+        >
+          Get Free Audit →
+        </Button>
+      )}
     </form>
   )
 } 
