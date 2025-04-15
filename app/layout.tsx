@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import { Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
 import { LeadMagnet } from '@/components/lead-magnet/LeadMagnet'
+import Script from 'next/script'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -51,13 +52,59 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${plusJakartaSans.variable}`}>
+    <html lang="en" className={`${inter.variable} ${plusJakartaSans.variable} scroll-smooth`}>
+      <head>
+        {/* Force scroll top on page load/refresh */}
+        <script 
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (history.scrollRestoration) {
+                history.scrollRestoration = 'manual';
+              }
+              window.scrollTo(0, 0);
+            `
+          }} 
+        />
+      </head>
       <body 
         className="font-sans antialiased bg-white text-gray-900"
         suppressHydrationWarning
       >
         {children}
         <LeadMagnet />
+        
+        {/* More robust script to force scroll to top */}
+        <Script id="scroll-to-top" strategy="afterInteractive">
+          {`
+            // Set scroll restoration to manual immediately
+            if (history.scrollRestoration) {
+              history.scrollRestoration = 'manual';
+            }
+            
+            // Force scroll to top on page load
+            window.addEventListener('load', function() {
+              setTimeout(() => {
+                window.scrollTo(0, 0);
+              }, 0);
+            });
+            
+            // Handle refresh and navigation
+            document.addEventListener('DOMContentLoaded', function() {
+              setTimeout(() => {
+                window.scrollTo(0, 0);
+              }, 0);
+            });
+            
+            // Also handle Next.js route changes
+            if (typeof window !== 'undefined') {
+              if (window.next && window.next.router) {
+                window.next.router.events.on('routeChangeComplete', () => {
+                  window.scrollTo(0, 0);
+                });
+              }
+            }
+          `}
+        </Script>
       </body>
     </html>
   )
