@@ -1,9 +1,9 @@
 export const generateHomePageSchema = () => ({
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "Hirank Solutions",
-  "url": "https://hiranksolution.com",
-  "logo": "https://hiranksolution.com/assets/images/logo/hirank-logo.webp",
+  "name": "IDock Solutions",
+  "url": "https://IDocksolution.com",
+  "logo": "https://IDocksolution.com/assets/images/logo/IDock-logo.webp",
   "description": "Professional e-commerce development and digital marketing agency specializing in WordPress, MERN stack, and Shopify solutions.",
   "address": {
     "@type": "PostalAddress",

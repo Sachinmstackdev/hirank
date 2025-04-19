@@ -14,16 +14,16 @@ import type { Metadata } from 'next'
   
 // Metadata for SEO
 export const metadata: Metadata = {
-  title: 'Hirank Solutions | E-commerce Development & Digital Marketing Agency',
-  description: 'Transform your business with Hirank Solutions. Expert e-commerce development using WordPress, MERN & Shopify. Complete digital marketing solutions including SEO, PPC & Social Media.',
+  title: 'IDock Solutions | E-commerce Development & Digital Marketing Agency',
+  description: 'Transform your business with IDock Solutions. Expert e-commerce development using WordPress, MERN & Shopify. Complete digital marketing solutions including SEO, PPC & Social Media.',
   openGraph: {
-    title: 'Hirank Solutions | E-commerce Development & Digital Marketing Agency',
+    title: 'IDock Solutions | E-commerce Development & Digital Marketing Agency',
     description: 'Expert e-commerce development and digital marketing solutions',
-    url: 'https://hiranksolution.com',
-    siteName: 'Hirank Solutions',
+    url: 'https://IDocksolution.com',
+    siteName: 'IDock Solutions',
     images: [
       {
-        url: 'https://hiranksolution.com/og-image.jpg',
+        url: 'https://IDocksolution.com/og-image.jpg',
         width: 1200,
         height: 630,
       },

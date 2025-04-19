@@ -54,7 +54,7 @@ export default function Header() {
                   />
                 </svg>
               </div>
-              <span className="text-xl font-medium">HiRank</span>
+              <span className="text-xl font-medium">IDock</span>
             </Link>
 
             {/* Desktop Navigation - Centered */}

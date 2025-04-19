@@ -23,25 +23,25 @@ const testimonials = [
   {
     name: 'Ryan Carter',
     handle: '@ryanc_ai',
-    text: 'HiRank transformed our workflow with AI automation, saving us countless hours!',
+    text: 'IDock transformed our workflow with AI automation, saving us countless hours!',
     avatar: '/testimonials/ryan.jpg',
   },
   {
     name: 'Ethan James',
     handle: '@ethanj',
-    text: 'From automating tasks to optimizing workflows, HiRank made our business more efficient than ever by eliminating manual work and reducing errors significantly.',
+    text: 'From automating tasks to optimizing workflows, IDock made our business more efficient than ever by eliminating manual work and reducing errors significantly.',
     avatar: '/testimonials/ethan.jpg',
   },
   {
     name: 'Jake Mitchell',
     handle: '@jakem',
-    text: 'HiRank our daily tool to bypass averages and reveal true insights, for the whole team!',
+    text: 'IDock our daily tool to bypass averages and reveal true insights, for the whole team!',
     avatar: '/testimonials/jake.jpg',
   },
   {
     name: 'Daniel Brooks',
     handle: '@dbrooks',
-    text: 'Smart, fast, and intuitive—HiRank simplifies AI automation like no other platform, enhancing scalability, reducing costs, and optimizing everyday operations with ease.',
+    text: 'Smart, fast, and intuitive—IDock simplifies AI automation like no other platform, enhancing scalability, reducing costs, and optimizing everyday operations with ease.',
     avatar: '/testimonials/daniel.jpg',
   },
   {
@@ -53,7 +53,7 @@ const testimonials = [
   {
     name: 'Sophia Reed',
     handle: '@sophiareed',
-    text: 'HiRank transformed our workflow with AI automation, saving us countless hours every week and improving overall team efficiency effortlessly.',
+    text: 'IDock transformed our workflow with AI automation, saving us countless hours every week and improving overall team efficiency effortlessly.',
     avatar: '/testimonials/sophia.jpg',
   },
 ]

@@ -8,13 +8,13 @@ import Link from 'next/link'
 const projects = [
   {
     id: 1,
-    title: 'E-Commerce Platform Redesign',
-    category: 'E-Commerce',
-    image: '/portfolio/ecommerce.jpg',
-    technologies: ['Next.js', 'Tailwind CSS', 'Stripe'],
-    client: 'Fashion Retailer',
-    link: '/projects/ecommerce',
-    description: 'Complete redesign of an e-commerce platform with a focus on mobile UX and conversion optimization.'
+    title: 'Two Sapiens E-Commerce Launch',
+    category: 'E-Commerce & Marketing',
+    image: 'https://res.cloudinary.com/twosapiens/image/upload/v1744980709/Two_sapiens_pu_bag_collection_rfd0xd.png',
+    technologies: ['woocommerce', 'SMM', 'Google Analytics', 'Email Marketing', 'Meta Ads'],
+    client: 'Two Sapiens',
+    link: '/projects/two-sapiens',
+    description: 'Integrated performance tracking, built email automation, and continue to manage social media and paid ads.'
   },
   {
     id: 2,
@@ -65,7 +65,8 @@ const projects = [
     client: 'Online Academy',
     link: '/projects/education',
     description: 'Interactive learning platform with course management, video streaming, and student progress tracking.'
-  }
+  },
+  
 ]
 
 export default function Portfolio() {
@@ -93,7 +94,7 @@ export default function Portfolio() {
                 onMouseEnter={() => setHoveredId(project.id)}
                 onMouseLeave={() => setHoveredId(null)}
                 style={{
-                  transition: 'all 0.5s cubic-bezier(0.23, 1, 0.32, 1)'
+                  transition: 'all 0.5s ease-out'
                 }}
               >
                 {/* Subtle background glow effect */}
@@ -104,7 +105,7 @@ export default function Portfolio() {
                   <Image
                     src={project.image || '/placeholder-project.jpg'}
                     alt={project.title}
-                    className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-110 group-hover:brightness-[0.25]"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-110 group-hover:brightness-[0.25]"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
@@ -113,7 +114,7 @@ export default function Portfolio() {
                   <div className="absolute inset-0 flex flex-col justify-center p-8 overflow-hidden z-10">
                     {/* Floating animation for category label */}
                     <div 
-                      className="opacity-0 group-hover:opacity-100 transform -translate-y-8 group-hover:translate-y-0 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] mb-2"
+                      className="opacity-0 group-hover:opacity-100 transform -translate-y-8 group-hover:translate-y-0 transition-all duration-700 ease-out mb-2"
                       style={{ transitionDelay: '0.1s' }}
                     >
                       <div className="text-xs text-blue-100 font-medium mb-2 bg-blue-600 bg-opacity-30 backdrop-blur-sm inline-block px-3 py-1 rounded-full border border-blue-400/30">
@@ -123,7 +124,7 @@ export default function Portfolio() {
                     
                     {/* Floating animation for title */}
                     <div 
-                      className="opacity-0 group-hover:opacity-100 transform -translate-y-8 group-hover:translate-y-0 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]"
+                      className="opacity-0 group-hover:opacity-100 transform -translate-y-8 group-hover:translate-y-0 transition-all duration-700 ease-out"
                       style={{ transitionDelay: '0.2s' }}
                     >
                       <h3 className="text-xl font-medium text-white mb-3">
@@ -133,7 +134,7 @@ export default function Portfolio() {
                     
                     {/* Floating animation for description */}
                     <div 
-                      className="opacity-0 group-hover:opacity-100 transform -translate-y-8 group-hover:translate-y-0 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]"
+                      className="opacity-0 group-hover:opacity-100 transform -translate-y-8 group-hover:translate-y-0 transition-all duration-700 ease-out"
                       style={{ transitionDelay: '0.3s' }}
                     >
                       <p className="text-blue-50 text-sm mb-5 max-w-[90%]">
@@ -143,7 +144,7 @@ export default function Portfolio() {
                     
                     {/* Floating animation for tech tags */}
                     <div 
-                      className="opacity-0 group-hover:opacity-100 transform -translate-y-8 group-hover:translate-y-0 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]"
+                      className="opacity-0 group-hover:opacity-100 transform -translate-y-8 group-hover:translate-y-0 transition-all duration-700 ease-out"
                       style={{ transitionDelay: '0.4s' }}
                     >
                       <div className="flex flex-wrap gap-2 mb-5">
@@ -160,7 +161,7 @@ export default function Portfolio() {
                     
                     {/* Floating animation for button */}
                     <div 
-                      className="opacity-0 group-hover:opacity-100 transform -translate-y-8 group-hover:translate-y-0 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]"
+                      className="opacity-0 group-hover:opacity-100 transform -translate-y-8 group-hover:translate-y-0 transition-all duration-700 ease-out"
                       style={{ transitionDelay: '0.5s' }}
                     >
                       <span 

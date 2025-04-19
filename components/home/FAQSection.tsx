@@ -10,23 +10,23 @@ interface FAQItem {
 
 const faqs: FAQItem[] = [
   {
-    question: "What is HiRank?",
-    answer: "HiRank is an AI-powered platform that helps businesses automate client acquisition and lead management."
+    question: "What is IDock?",
+    answer: "IDock is an AI-powered platform that helps businesses automate client acquisition and lead management."
   },
   {
-    question: "How does HiRank improve efficiency?",
-    answer: "HiRank automates repetitive tasks, provides intelligent insights, and streamlines your workflow to save time and resources while improving results."
+    question: "How does IDock improve efficiency?",
+    answer: "IDock automates repetitive tasks, provides intelligent insights, and streamlines your workflow to save time and resources while improving results."
   },
   {
-    question: "Is HiRank suitable for all business sizes?",
-    answer: "Yes, HiRank is designed to scale with your business, whether you're a startup or an enterprise. Our flexible solutions adapt to your needs."
+    question: "Is IDock suitable for all business sizes?",
+    answer: "Yes, IDock is designed to scale with your business, whether you're a startup or an enterprise. Our flexible solutions adapt to your needs."
   },
   {
-    question: "Does HiRank integrate with other tools?",
-    answer: "Yes, HiRank seamlessly integrates with popular CRM systems, marketing tools, and business software to enhance your existing workflow."
+    question: "Does IDock integrate with other tools?",
+    answer: "Yes, IDock seamlessly integrates with popular CRM systems, marketing tools, and business software to enhance your existing workflow."
   },
   {
-    question: "How can I get started with HiRank?",
+    question: "How can I get started with IDock?",
     answer: "Getting started is easy! Simply click the 'Get Started' button below to schedule a demo or contact our team for more information."
   }
 ]
@@ -85,7 +85,7 @@ export default function FAQSection() {
               </div>
             </div>
             <h3 className="text-4xl font-medium mb-12">
-              Transform the way you manage<br />AI tasks with HiRank
+              Transform the way you manage<br />AI tasks with IDock
             </h3>
             <div className="flex justify-center">
               <Link 

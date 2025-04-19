@@ -17,16 +17,16 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | HiRank Solutions - E-commerce Development & Digital Marketing Agency',
-    default: 'HiRank Solutions - E-commerce Development & Digital Marketing Agency',
+    template: '%s | IDock Solutions - E-commerce Development & Digital Marketing Agency',
+    default: 'IDock Solutions - E-commerce Development & Digital Marketing Agency',
   },
   description: 'Professional e-commerce development services in WordPress, MERN Stack, and Shopify. Offering product photography, SEO, PPC, and comprehensive digital marketing solutions.',
-  metadataBase: new URL('https://hiranksolution.com'),
+  metadataBase: new URL('https://IDocksolution.com'),
   openGraph: {
-    title: 'HiRank Solutions - E-commerce Development & Digital Marketing Agency',
+    title: 'IDock Solutions - E-commerce Development & Digital Marketing Agency',
     description: 'Professional e-commerce development services in WordPress, MERN Stack, and Shopify. Offering product photography, SEO, PPC, and comprehensive digital marketing solutions.',
-    url: 'https://hiranksolution.com',
-    siteName: 'HiRank Solutions',
+    url: 'https://IDocksolution.com',
+    siteName: 'IDock Solutions',
     locale: 'en_US',
     type: 'website',
   },

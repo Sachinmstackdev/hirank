@@ -13,13 +13,13 @@ const structuredData = {
   "@type": "Blog",
   "headline": "Insights & Resources",
   "description": "Explore strategies, case studies, and industry trends from our team.",
-  "url": "https://hirank.com/blog",
+  "url": "https://IDock.com/blog",
   "publisher": {
     "@type": "Organization",
-    "name": "HiRank",
+    "name": "IDock",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://hirank.com/logo.png"
+      "url": "https://IDock.com/logo.png"
     }
   }
 }
