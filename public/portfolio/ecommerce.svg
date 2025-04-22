@@ -1,0 +1,14 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="500" fill="url(#grad)"/>
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+  <circle cx="400" cy="250" r="80" fill="white" fill-opacity="0.1"/>
+  <path d="M380 230h40v40h-40z" stroke="white" stroke-width="4" fill="none"/>
+  <path d="M360 270h80" stroke="white" stroke-width="4"/>
+  <path d="M400 210v20" stroke="white" stroke-width="4"/>
+  <text x="400" y="350" font-family="Arial" font-size="24" fill="white" text-anchor="middle">E-commerce Platform</text>
+</svg> 

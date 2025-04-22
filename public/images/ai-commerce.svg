@@ -1,0 +1,25 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient background -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4F46E5" />
+      <stop offset="100%" stop-color="#7C3AED" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background rectangle -->
+  <rect width="800" height="600" fill="url(#bgGradient)" />
+  
+  <!-- Decorative elements -->
+  <circle cx="650" cy="150" r="80" fill="#8B5CF6" opacity="0.3" />
+  <circle cx="150" cy="450" r="100" fill="#3B82F6" opacity="0.3" />
+  
+  <!-- Main title -->
+  <text x="400" y="250" font-family="Arial, sans-serif" font-weight="bold" font-size="44" text-anchor="middle" fill="white">AI-Powered E-Commerce</text>
+  
+  <!-- Tagline -->
+  <text x="400" y="310" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="white" opacity="0.8">Transforming Digital Experiences</text>
+  
+  <!-- Icon -->
+  <text x="400" y="400" font-family="Arial, sans-serif" font-size="72" text-anchor="middle" fill="white">🚀</text>
+</svg> 
