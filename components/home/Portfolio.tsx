@@ -66,7 +66,6 @@ const projects = [
     link: '/projects/education',
     description: 'Interactive learning platform with course management, video streaming, and student progress tracking.'
   },
-  
 ]
 
 export default function Portfolio() {
@@ -99,7 +98,6 @@ export default function Portfolio() {
               >
                 {/* Subtle background glow effect */}
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-300 to-purple-600 rounded-xl opacity-0 group-hover:opacity-70 blur-lg group-hover:blur-xl transition-all duration-700 -z-10"></div>
-                
                 {/* Project image (always visible) */}
                 <div className="relative w-full h-full">
                   <Image
@@ -109,11 +107,11 @@ export default function Portfolio() {
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
-                  
+
                   {/* Overlay that appears on hover */}
                   <div className="absolute inset-0 flex flex-col justify-center p-8 overflow-hidden z-10">
                     {/* Floating animation for category label */}
-                    <div 
+                    <div
                       className="opacity-0 group-hover:opacity-100 transform -translate-y-8 group-hover:translate-y-0 transition-all duration-700 ease-out mb-2"
                       style={{ transitionDelay: '0.1s' }}
                     >
@@ -121,9 +119,9 @@ export default function Portfolio() {
                         {project.category}
                       </div>
                     </div>
-                    
+
                     {/* Floating animation for title */}
-                    <div 
+                    <div
                       className="opacity-0 group-hover:opacity-100 transform -translate-y-8 group-hover:translate-y-0 transition-all duration-700 ease-out"
                       style={{ transitionDelay: '0.2s' }}
                     >
@@ -131,9 +129,9 @@ export default function Portfolio() {
                         {project.title}
                       </h3>
                     </div>
-                    
+
                     {/* Floating animation for description */}
-                    <div 
+                    <div
                       className="opacity-0 group-hover:opacity-100 transform -translate-y-8 group-hover:translate-y-0 transition-all duration-700 ease-out"
                       style={{ transitionDelay: '0.3s' }}
                     >
@@ -141,16 +139,16 @@ export default function Portfolio() {
                         {project.description}
                       </p>
                     </div>
-                    
+
                     {/* Floating animation for tech tags */}
-                    <div 
+                    <div
                       className="opacity-0 group-hover:opacity-100 transform -translate-y-8 group-hover:translate-y-0 transition-all duration-700 ease-out"
                       style={{ transitionDelay: '0.4s' }}
                     >
                       <div className="flex flex-wrap gap-2 mb-5">
                         {project.technologies.slice(0, 3).map((tech) => (
-                          <span 
-                            key={tech} 
+                          <span
+                            key={tech}
                             className="text-xs py-1 px-3 bg-white bg-opacity-10 backdrop-blur-sm text-white rounded-full border border-white/20"
                           >
                             {tech}
@@ -158,28 +156,28 @@ export default function Portfolio() {
                         ))}
                       </div>
                     </div>
-                    
+
                     {/* Floating animation for button */}
-                    <div 
+                    <div
                       className="opacity-0 group-hover:opacity-100 transform -translate-y-8 group-hover:translate-y-0 transition-all duration-700 ease-out"
                       style={{ transitionDelay: '0.5s' }}
                     >
-                      <span 
+                      <span
                         className="inline-flex items-center px-5 py-2 bg-white text-blue-600 text-sm font-medium rounded-full transform hover:scale-105 transition-transform duration-300 hover:shadow-md hover:shadow-blue-500/20"
                       >
                         View Project
-                        <svg 
-                          className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" 
-                          fill="none" 
-                          stroke="currentColor" 
-                          viewBox="0 0 24 24" 
+                        <svg
+                          className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
                           xmlns="http://www.w3.org/2000/svg"
                         >
-                          <path 
-                            strokeLinecap="round" 
-                            strokeLinejoin="round" 
-                            strokeWidth={2} 
-                            d="M14 5l7 7m0 0l-7 7m7-7H3" 
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"
                           />
                         </svg>
                       </span>
