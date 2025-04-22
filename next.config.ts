@@ -5,6 +5,8 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  // Ensure pages directory routes are still accessible
+  pageExtensions: ['tsx', 'ts', 'jsx', 'js', 'md', 'mdx'],
   images: {
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',

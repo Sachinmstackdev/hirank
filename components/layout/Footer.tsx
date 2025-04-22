@@ -93,6 +93,17 @@ export default function Footer() {
             © {new Date().getFullYear()} All rights reserved to IDock™
           </div>
           
+          <div className="flex space-x-6">
+            <Link href="/privacy-policy" className="text-gray-500 hover:text-gray-800 text-sm">
+              Privacy Policy
+            </Link>
+            <Link href="/terms-conditions" className="text-gray-500 hover:text-gray-800 text-sm">
+              Terms & Conditions
+            </Link>
+            <Link href="/refund-policy" className="text-gray-500 hover:text-gray-800 text-sm">
+              Refund Policy
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

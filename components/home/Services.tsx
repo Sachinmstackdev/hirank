@@ -36,7 +36,7 @@ const services = [
     title: "ROI-focused ad campaigns",
     number: "04",
     description: "Our strategies focus on ROI, scalability, and customer acquisition, combining paid media with expert social media management to grow your brand across every channel.",
-    image: "https://res.cloudinary.com/twosapiens/image/upload/v1744385390/performance-marketing_ooosur.png",
+    image: "https://res.cloudinary.com/twosapiens/image/upload/v1745288658/performance-marketing_cjo8hr.png",
     bgColor: "#F5F8FF"
   }
 ]
