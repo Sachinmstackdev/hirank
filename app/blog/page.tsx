@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import { supabase } from '@/lib/supabase'
 
 // Structured data for blog listing with enhanced properties
 const structuredData = {
@@ -116,6 +117,9 @@ const staggerContainer = {
 export default function BlogPage() {
   const [selectedCategory, setSelectedCategory] = useState("All")
   const [searchQuery, setSearchQuery] = useState("")
+  const [email, setEmail] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [subscribeMessage, setSubscribeMessage] = useState<{text: string, type: 'success' | 'error'} | null>(null)
 
   // Filter posts based on category and search query
   const filteredPosts = blogPosts.filter(post => {
@@ -129,6 +133,56 @@ export default function BlogPage() {
   const recentPosts = [...blogPosts].sort((a, b) => 
     new Date(b.date).getTime() - new Date(a.date).getTime()
   ).slice(0, 5)
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault()
+    
+    if (!email) return
+    
+    setIsSubmitting(true)
+    setSubscribeMessage(null)
+    
+    try {
+      // Insert data into the newsletter_subscribers table
+      const { error } = await supabase
+        .from('newsletter_subscribers')
+        .insert([{ 
+          email,
+          source: 'blog_page',
+          created_at: new Date().toISOString()
+        }])
+      
+      if (error) {
+        // Check if it's a duplicate email error
+        if (error.code === '23505') {
+          setSubscribeMessage({
+            text: 'You are already subscribed to our newsletter.',
+            type: 'error'
+          })
+        } else {
+          console.error('Error submitting email:', error)
+          setSubscribeMessage({
+            text: 'Something went wrong. Please try again.',
+            type: 'error'
+          })
+        }
+      } else {
+        setEmail('')
+        setSubscribeMessage({
+          text: 'Thank you for subscribing!',
+          type: 'success'
+        })
+      }
+    } catch (error) {
+      console.error('Exception when submitting email:', error)
+      setSubscribeMessage({
+        text: 'Something went wrong. Please try again.',
+        type: 'error'
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   return (
     <>
@@ -339,21 +393,34 @@ export default function BlogPage() {
                 <p className="text-white/80">Join our newsletter and get exclusive tips, case studies, and tools directly to your inbox.</p>
               </div>
               
-              <form className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
                 <input 
                   type="email" 
                   placeholder="Your email address" 
                   className="flex-1 px-5 py-3 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
                   required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  disabled={isSubmitting}
                   aria-label="Email address for newsletter"
                 />
                 <button 
                   type="submit" 
-                  className="bg-white text-[#667EEA] px-6 py-3 rounded-full font-medium hover:bg-opacity-90 transition-colors"
+                  className="bg-white text-[#667EEA] px-6 py-3 rounded-full font-medium hover:bg-opacity-90 transition-colors disabled:opacity-70"
+                  disabled={isSubmitting}
                 >
-                  Subscribe
+                  {isSubmitting ? 'Subscribing...' : 'Subscribe'}
                 </button>
               </form>
+              
+              {subscribeMessage && (
+                <p className={`text-sm text-center mt-4 ${
+                  subscribeMessage.type === 'success' ? 'text-white' : 'text-red-200'
+                }`}>
+                  {subscribeMessage.text}
+                </p>
+              )}
+              
               <p className="text-xs text-white/60 text-center mt-4">
                 We respect your privacy. Unsubscribe at any time.
               </p>

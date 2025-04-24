@@ -11,6 +11,7 @@ import Loading from '@/components/Loading'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import type { Metadata } from 'next'
+import { testSupabaseConnection } from '@/lib/supabaseTest'
   
 // Metadata for SEO
 export const metadata: Metadata = {
@@ -33,7 +34,11 @@ export const metadata: Metadata = {
   },
 }
 
-export default function Home() {
+export default async function Home() {
+  // Test Supabase connection
+  const isConnected = await testSupabaseConnection()
+  console.log('Supabase connection test result:', isConnected)
+
   return (
     <main className="min-h-screen">
       <Header />

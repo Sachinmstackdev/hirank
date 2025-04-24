@@ -4,11 +4,14 @@ import { useEffect, useState, useRef } from 'react'
 import { Dialog, DialogContent } from "@/components/ui/dialog"
 import { LeadMagnetForm } from './LeadMagnetForm'
 import { X } from 'lucide-react'
+import { LeadFormData } from '@/lib/utils/supabaseHelpers'
 import { cn } from "@/lib/utils"
 
 export function DesktopExitIntent() {
   const [isOpen, setIsOpen] = useState(false)
   const [hasShown, setHasShown] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSuccess, setIsSuccess] = useState(false)
   const formRef = useRef<HTMLFormElement>(null)
 
   useEffect(() => {
@@ -29,10 +32,29 @@ export function DesktopExitIntent() {
     }
   }, [hasShown])
 
-  const handleSubmit = async (data: { name: string; email: string; website: string }) => {
-    // Handle form submission here
-    console.log('Form submitted:', data)
-    setIsOpen(false)
+  const handleSubmit = async (data: LeadFormData) => {
+    setIsSubmitting(true)
+    
+    try {
+      // Form submission is already handled in LeadMagnetForm component
+      console.log('Lead data submitted:', data)
+      
+      // Show success state
+      setIsSuccess(true)
+      
+      // Close the dialog after 3 seconds
+      setTimeout(() => {
+        setIsOpen(false)
+        // Reset states after dialog is closed
+        setTimeout(() => {
+          setIsSuccess(false)
+          setIsSubmitting(false)
+        }, 300)
+      }, 3000)
+    } catch (error) {
+      console.error('Error handling form submission:', error)
+      setIsSubmitting(false)
+    }
   }
 
   const submitForm = () => {
@@ -41,41 +63,56 @@ export function DesktopExitIntent() {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogContent className={cn(
-        "w-[95vw] max-w-[420px] p-0 overflow-hidden rounded-3xl border-none shadow-2xl",
-        "[&>button]:hidden", // Hide the default close button
-        "[&_div[data-state]]:!bg-transparent" // Remove any background overlay
-      )}>
+      <DialogContent className="sm:max-w-[500px] p-0 gap-0 rounded-2xl overflow-hidden">
         <div className="bg-blue-500 py-8 px-6 relative">
-          {/* Custom close button */}
+          {/* Close button */}
           <button 
-            onClick={() => setIsOpen(false)} 
-            className="absolute top-4 right-4 z-50 w-7 h-7 bg-white hover:bg-gray-100 rounded-full flex items-center justify-center shadow-sm border-0 outline-none focus:outline-none"
-            aria-label="Close"
+            onClick={() => setIsOpen(false)}
+            className="absolute top-4 right-4 w-7 h-7 bg-white hover:bg-gray-100 rounded-full flex items-center justify-center shadow-sm focus:outline-none"
           >
             <X size={14} className="text-gray-500" />
           </button>
           
-          <div className="text-center mb-2">
-            <h2 className="text-3xl font-bold text-white">
-              Download Free SEO Checklist
-            </h2>
-            <p className="text-blue-100 text-base mt-2">
-              Need help with your store? Let's talk and optimize your online presence!
-            </p>
-          </div>
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-2">
+            Get Your Free SEO Audit
+          </h2>
+          <p className="text-center text-blue-100 text-base px-4">
+            Find out how to improve your website's performance and rankings
+          </p>
         </div>
         
         <div className="bg-white p-8">
-          <LeadMagnetForm onSubmit={handleSubmit} formRef={formRef} showButton={false} />
-          
-          <button 
-            onClick={submitForm}
-            type="button"
-            className="w-full py-4 mt-4 bg-blue-500 hover:bg-blue-600 text-white text-lg font-semibold rounded-lg flex items-center justify-center"
-          >
-            Get Free Audit <span className="ml-2">→</span>
-          </button>
+          {isSuccess ? (
+            <div className="text-center py-8">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Thank You!</h3>
+              <p className="text-gray-600">
+                Your information has been submitted successfully. We'll get back to you shortly.
+              </p>
+            </div>
+          ) : (
+            <>
+              <LeadMagnetForm 
+                onSubmit={handleSubmit} 
+                formRef={formRef} 
+                showButton={false} 
+                source="desktop_exit_intent"
+              />
+              
+              <button 
+                onClick={submitForm}
+                type="button"
+                className="w-full py-4 mt-4 bg-blue-500 hover:bg-blue-600 text-white text-lg font-semibold rounded-lg flex items-center justify-center"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? 'Submitting...' : 'Get Free Audit'} {!isSubmitting && <span className="ml-2">→</span>}
+              </button>
+            </>
+          )}
           
           <div className="flex items-center mt-8">
             <div className="flex -space-x-3 mr-3">

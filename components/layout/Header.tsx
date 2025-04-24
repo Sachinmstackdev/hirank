@@ -21,10 +21,21 @@ export default function Header() {
   const navItems = [
     { href: '/about', label: 'About' },
     { href: '/services', label: 'Services' },
-    { href: '/client-wins', label: 'Client Wins' },
+    { href: '/projects', label: 'Client Wins' },
     { href: '/blog', label: 'Blog' },
     { href: '/contact', label: 'Contact' },
   ]
+
+  // Prefetch contact page for faster navigation
+  useEffect(() => {
+    const prefetchPaths = ['/contact'];
+    prefetchPaths.forEach(path => {
+      const link = document.createElement('link');
+      link.rel = 'prefetch';
+      link.href = path;
+      document.head.appendChild(link);
+    });
+  }, []);
 
   return (
     <>
@@ -32,6 +43,7 @@ export default function Header() {
       <motion.header 
         className={`fixed w-full z-40 py-5 ${showHeader ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         transition={{ duration: 0.3 }}
+        initial={false}
       >
         <div className="container max-w-7xl mx-auto px-6 md:px-8">
           <nav className="flex items-center justify-between">
@@ -64,6 +76,7 @@ export default function Header() {
                   <Link 
                     href={item.href} 
                     className="text-[#4B5563] hover:text-[#111827] text-base px-5 font-normal transition-colors"
+                    prefetch={item.href === '/contact'}
                   >
                     {item.label}
                   </Link>
@@ -76,6 +89,7 @@ export default function Header() {
               <Link 
                 href="/contact"
                 className="bg-[#4F7DF3] hover:bg-[#3968e7] text-white px-7 py-3 rounded-full text-base font-medium transition-colors inline-flex items-center justify-center gap-2"
+                prefetch={true}
               >
                 <span>Get started</span>
                 <svg className="w-5 h-5 ml-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -113,6 +127,7 @@ export default function Header() {
               href={item.href}
               className="text-gray-800 text-lg font-medium hover:text-gray-600 transition-colors duration-300"
               onClick={() => setIsMobileMenuOpen(false)}
+              prefetch={item.href === '/contact'}
             >
               {item.label}
             </Link>
@@ -121,6 +136,7 @@ export default function Header() {
             href="/contact"
             className="bg-[#4F7DF3] hover:bg-[#3968e7] text-white px-7 py-3 rounded-full text-base font-medium transition-colors flex items-center gap-2"
             onClick={() => setIsMobileMenuOpen(false)}
+            prefetch={true}
           >
             <span>Get started</span>
             <svg className="w-5 h-5 ml-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

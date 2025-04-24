@@ -4,12 +4,14 @@ import { useEffect, useState, useRef } from 'react'
 import { Sheet, SheetContent, SheetClose } from "@/components/ui/sheet"
 import { LeadMagnetForm } from './LeadMagnetForm'
 import { X } from 'lucide-react'
-import Image from 'next/image'
+import { LeadFormData } from '@/lib/utils/supabaseHelpers'
 import { cn } from "@/lib/utils"
 
 export function MobileSlideIn() {
   const [isOpen, setIsOpen] = useState(false)
   const [hasShown, setHasShown] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSuccess, setIsSuccess] = useState(false)
   const formRef = useRef<HTMLFormElement>(null)
 
   useEffect(() => {
@@ -24,10 +26,29 @@ export function MobileSlideIn() {
     }
   }, [hasShown])
 
-  const handleSubmit = async (data: { name: string; email: string; website: string }) => {
-    // Handle form submission here
-    console.log('Form submitted:', data)
-    setIsOpen(false)
+  const handleSubmit = async (data: LeadFormData) => {
+    setIsSubmitting(true)
+    
+    try {
+      // Form submission is already handled in LeadMagnetForm component
+      console.log('Lead data submitted:', data)
+      
+      // Show success state
+      setIsSuccess(true)
+      
+      // Close the slide-in after 3 seconds
+      setTimeout(() => {
+        setIsOpen(false)
+        // Reset states after slide-in is closed
+        setTimeout(() => {
+          setIsSuccess(false)
+          setIsSubmitting(false)
+        }, 300)
+      }, 3000)
+    } catch (error) {
+      console.error('Error handling form submission:', error)
+      setIsSubmitting(false)
+    }
   }
 
   const submitForm = () => {
@@ -61,15 +82,37 @@ export function MobileSlideIn() {
         </div>
         
         <div className="bg-white p-8">
-          <LeadMagnetForm onSubmit={handleSubmit} formRef={formRef} showButton={false} />
-          
-          <button 
-            onClick={submitForm}
-            type="button"
-            className="w-full py-4 mt-4 bg-blue-500 hover:bg-blue-600 text-white text-lg font-semibold rounded-lg flex items-center justify-center"
-          >
-            Get Free Audit <span className="ml-2">→</span>
-          </button>
+          {isSuccess ? (
+            <div className="text-center py-8">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Thank You!</h3>
+              <p className="text-gray-600">
+                Your information has been submitted successfully. We'll get back to you shortly.
+              </p>
+            </div>
+          ) : (
+            <>
+              <LeadMagnetForm 
+                onSubmit={handleSubmit} 
+                formRef={formRef} 
+                showButton={false} 
+                source="mobile_slide_in" 
+              />
+              
+              <button 
+                onClick={submitForm}
+                type="button"
+                className="w-full py-4 mt-4 bg-blue-500 hover:bg-blue-600 text-white text-lg font-semibold rounded-lg flex items-center justify-center"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? 'Submitting...' : 'Get Free Audit'} {!isSubmitting && <span className="ml-2">→</span>}
+              </button>
+            </>
+          )}
           
           <div className="flex items-center mt-8">
             <div className="flex -space-x-3 mr-3">

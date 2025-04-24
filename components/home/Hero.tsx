@@ -96,6 +96,7 @@ export default function Hero() {
               <Link
                 href="/contact"
                 className="bg-[#4F7DF3] hover:bg-[#3968e7] text-white px-6 py-3 rounded-full text-lg font-medium transition-all duration-300 inline-flex items-center justify-center gap-2 w-full sm:w-auto"
+                prefetch={true}
               >
                 <span>Get started</span>
                 <svg className="w-5 h-5 ml-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
