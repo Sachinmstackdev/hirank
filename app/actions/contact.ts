@@ -10,7 +10,7 @@ export async function handleContactFormSubmission(formData: ContactFormData) {
         fullName: formData.fullName,
         email: formData.email,
         subject: formData.subject,
-        message: formData.message
+        massage: formData.massage
       }),
       new Promise((_, reject) => 
         setTimeout(() => reject(new Error('Request timeout')), 5000)

@@ -12,7 +12,7 @@ function ContactForm() {
     fullName: '',
     email: '',
     subject: '',
-    message: ''
+    massage: ''
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitSuccess, setSubmitSuccess] = useState(false)
@@ -33,12 +33,12 @@ function ContactForm() {
         fullName: formData.fullName,
         email: formData.email,
         subject: formData.subject,
-        message: formData.message
+        massage: formData.massage
       })
       
       if (result.success) {
         setSubmitSuccess(true)
-        setFormData({ fullName: '', email: '', subject: '', message: '' })
+        setFormData({ fullName: '', email: '', subject: '', massage: '' })
       } else {
         throw new Error(result.error || 'Failed to submit message')
       }
@@ -121,11 +121,11 @@ function ContactForm() {
           </div>
           
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1.5">Message (Optional)</label>
+            <label htmlFor="massage" className="block text-sm font-medium text-gray-700 mb-1.5">Message (Optional)</label>
             <textarea
-              id="message"
-              name="message"
-              value={formData.message}
+              id="massage"
+              name="massage"
+              value={formData.massage}
               onChange={handleChange}
               rows={5}
               className="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
