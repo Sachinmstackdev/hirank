@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRef } from 'react'
 
 // Blog post data
 const blogPosts = [
@@ -30,6 +31,8 @@ const blogPosts = [
 ]
 
 export default function BlogPosts() {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
   return (
     <section className="py-20 md:py-32 bg-white">
       <div className="container max-w-7xl mx-auto px-4 sm:px-6">
@@ -51,12 +54,36 @@ export default function BlogPosts() {
           </p>
         </div>
         
-        {/* Blog posts grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
+        {/* Blog posts scrollable container for mobile and grid for desktop */}
+        <div 
+          ref={scrollContainerRef}
+          className="flex overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
           {blogPosts.map((post, index) => (
-            <BlogCard 
+            <div key={index} className="flex-shrink-0 snap-center w-[85%] sm:w-[70%] md:w-auto mx-auto md:mx-0">
+              <BlogCard {...post} />
+            </div>
+          ))}
+        </div>
+
+        {/* Pagination dots for mobile */}
+        <div className="flex justify-center space-x-2 mt-2 mb-10 md:hidden">
+          {blogPosts.map((_, index) => (
+            <button
               key={index}
-              {...post}
+              className="w-2 h-2 rounded-full bg-gray-300 hover:bg-blue-500 focus:bg-blue-500"
+              aria-label={`Go to blog post ${index + 1}`}
+              onClick={() => {
+                if (scrollContainerRef.current) {
+                  const containerWidth = scrollContainerRef.current.clientWidth;
+                  const itemWidth = containerWidth * 0.85; // Adjust to match the width of items
+                  scrollContainerRef.current.scrollTo({
+                    left: index * itemWidth,
+                    behavior: 'smooth'
+                  });
+                }
+              }}
             />
           ))}
         </div>
@@ -104,10 +131,11 @@ function BlogCard({ title, excerpt, coverImage, date, slug }: BlogCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: 0.1 }}
+      className="h-full"
     >
       <Link 
         href={`/blog/${slug}`}
-        className="group block bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
+        className="group block bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 h-full"
       >
         <div className="relative h-48 overflow-hidden">
           <Image

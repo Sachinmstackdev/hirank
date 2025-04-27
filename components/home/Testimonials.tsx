@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { useRef } from 'react'
 
 // Star rating component
 const StarRating = () => (
@@ -59,6 +60,8 @@ const testimonials = [
 ]
 
 export default function Testimonials() {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
   return (
     <section className="py-20 md:py-32 bg-white">
       <div className="container max-w-7xl mx-auto px-4 sm:px-6">
@@ -77,8 +80,49 @@ export default function Testimonials() {
           </h2>
         </div>
         
-        {/* Testimonials grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        {/* Testimonials scrollable container */}
+        <div 
+          ref={scrollContainerRef}
+          className="flex overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide -mx-4 px-4"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {testimonials.map((testimonial, index) => (
+            <div 
+              key={index} 
+              className="flex-shrink-0 snap-start w-full sm:w-[85%] md:w-1/2 lg:w-1/3 px-3"
+            >
+              <TestimonialCard 
+                name={testimonial.name}
+                handle={testimonial.handle}
+                text={testimonial.text}
+                avatar={testimonial.avatar}
+              />
+            </div>
+          ))}
+        </div>
+        
+        {/* Pagination dots for mobile */}
+        <div className="flex justify-center space-x-2 mt-6 md:hidden">
+          {testimonials.map((_, index) => (
+            <button
+              key={index}
+              className="w-2 h-2 rounded-full bg-gray-300 hover:bg-blue-500 focus:bg-blue-500"
+              aria-label={`Go to testimonial ${index + 1}`}
+              onClick={() => {
+                if (scrollContainerRef.current) {
+                  const containerWidth = scrollContainerRef.current.clientWidth;
+                  scrollContainerRef.current.scrollTo({
+                    left: index * containerWidth,
+                    behavior: 'smooth'
+                  });
+                }
+              }}
+            />
+          ))}
+        </div>
+        
+        {/* Desktop grid view - hidden on mobile */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <TestimonialCard 
               key={index}
@@ -109,7 +153,7 @@ function TestimonialCard({ name, handle, text, avatar }: TestimonialCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: 0.1 }}
-      className="bg-gray-50 rounded-xl p-6 flex flex-col"
+      className="bg-gray-50 rounded-xl p-6 flex flex-col h-full"
     >
       <div className="flex items-center mb-4">
         <div className="w-12 h-12 rounded-full overflow-hidden mr-3">
@@ -134,4 +178,18 @@ function TestimonialCard({ name, handle, text, avatar }: TestimonialCardProps) {
       <StarRating />
     </motion.div>
   )
-} 
+}
+
+// Add this CSS to hide scrollbars while maintaining functionality
+const scrollbarHideStyles = `
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+`; 

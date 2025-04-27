@@ -105,9 +105,6 @@ export default function RootLayout({
             }
           `}
         </Script>
-        
-        {/* Tidio Chatbot */}
-        <Script id="tidio-chat" src="//code.tidio.co/avipj1sepfksggol9jtej3oksyvbo3pv.js" strategy="afterInteractive" />
       </body>
     </html>
   )
