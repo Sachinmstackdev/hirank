@@ -50,7 +50,7 @@ export function LeadMagnetForm({
         // Call the parent onSubmit callback
         onSubmit(formData)
       } else {
-        setFormError(result.message)
+        setFormError(result.massage)
       }
     } catch (error) {
       console.error('Error in form submission:', error)
