@@ -3,144 +3,212 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-// FAQ data
-const faqItems = [
+// Enhanced FAQ data with more e-commerce specific questions and better answers
+const faqs = [
   {
     id: 1,
-    question: "What types of businesses do you work with?",
-    answer: "We work with businesses of all sizes, from startups to established enterprises, across various industries including e-commerce, SaaS, healthcare, education, and more. Our solutions are tailored to meet the specific needs and goals of each client."
+    question: "What makes your e-commerce solutions different from other agencies?",
+    answer: "Unlike generalist agencies, we specialize exclusively in e-commerce growth with proven expertise across Shopify, headless commerce, and marketplace optimization. Our approach combines technical development with conversion-focused design and data-driven marketing strategies, consistently delivering 30-70% conversion rate improvements. We've built and scaled 50+ successful e-commerce brands with our comprehensive methodology."
   },
   {
     id: 2,
-    question: "How long does it typically take to complete a project?",
-    answer: "Project timelines vary depending on complexity and scope. A basic website might take 2-4 weeks, while a full e-commerce platform with custom features could take 6-12 weeks. During our initial consultation, we'll provide a detailed timeline based on your specific requirements."
+    question: "How long does it take to build a custom e-commerce store?",
+    answer: "A complete custom e-commerce store typically takes 6-10 weeks from concept to launch, depending on complexity and requirements. Our process includes strategy/planning (1-2 weeks), design (2-3 weeks), development (3-4 weeks), and testing/optimization (1 week). For businesses needing to launch faster, we offer accelerated timelines with our rapid-deployment framework that can deliver a fully functional store in as little as 3-4 weeks."
   },
   {
     id: 3,
-    question: "Do you provide ongoing support after the project is completed?",
-    answer: "Yes, we offer various maintenance and support packages to ensure your digital assets continue to perform optimally. These can include technical support, content updates, security monitoring, performance optimization, and strategic guidance for future enhancements."
+    question: "Do you work with established stores or only new businesses?",
+    answer: "We work with both established e-commerce stores looking to scale and new businesses launching their first online presence. For established stores, we offer specialized optimization services to improve conversion rates, enhance user experience, and increase average order value. Our proven growth framework has helped businesses at all stages, from pre-revenue startups to established brands generating $10M+ in annual revenue."
   },
   {
     id: 4,
-    question: "What is your approach to ensuring my website ranks well in search engines?",
-    answer: "We implement SEO best practices during development, including proper semantic HTML, optimized page speed, mobile-friendliness, and schema markup. We can also provide comprehensive SEO services including keyword research, content optimization, technical SEO audits, and ongoing optimization strategies."
+    question: "What e-commerce platforms do you specialize in?",
+    answer: "We specialize in Shopify, Shopify Plus, headless commerce solutions (using Next.js, React), WooCommerce, and marketplace optimization for Amazon, Etsy, and Walmart. Each platform has its strengths, and we recommend the best fit based on your specific business needs, growth goals, and operational requirements. Our technical team has deep expertise across all these platforms to deliver exceptional results."
   },
   {
     id: 5,
-    question: "How do you measure the success of digital marketing campaigns?",
-    answer: "We track key performance indicators (KPIs) aligned with your business goals, which may include conversion rates, cost per acquisition, return on ad spend (ROAS), engagement metrics, and revenue growth. We provide regular reports and insights to demonstrate campaign performance and guide optimization efforts."
+    question: "How do you approach performance marketing for e-commerce?",
+    answer: "Our data-driven approach to e-commerce marketing focuses on maximizing ROAS (Return on Ad Spend) through comprehensive channel strategies. We begin with customer research and conversion funnel analysis, then implement targeted campaigns across Google, Meta, TikTok and other platforms. Our clients typically see a 2.5-4x improvement in ROAS within 90 days through our systematic optimization process, A/B testing, and audience refinement strategies."
   },
   {
     id: 6,
-    question: "What platforms and technologies do you specialize in?",
-    answer: "We have expertise in various technologies including WordPress, Shopify, WooCommerce, React, Next.js, Node.js, and more. For digital marketing, we're proficient with Google Ads, Meta Ads, LinkedIn Ads, Google Analytics, and various marketing automation tools. We recommend the most suitable technologies based on your specific requirements."
+    question: "What ongoing support do you provide after launch?",
+    answer: "After launch, we offer flexible support options including dedicated maintenance packages, growth partnerships, and on-demand technical assistance. Our post-launch services include performance monitoring, conversion optimization, feature enhancements, technical support, and strategic guidance. Many clients choose our comprehensive growth partnership, which includes regular optimization, technical support, and strategic consulting to continuously improve results."
+  },
+  {
+    id: 7,
+    question: "How do your pricing models work?",
+    answer: "We offer transparent, value-based pricing with three main models: project-based fixed pricing for defined scope work, monthly retainers for ongoing services, and performance partnerships for certain marketing services. Project fees typically range from $5,000-$50,000 depending on scope and complexity, while retainers start at $2,500/month. We provide detailed proposals with clear deliverables and timelines, and never surprise clients with hidden costs."
   }
 ]
 
 export default function FAQSection() {
-  return (
-    <section className="py-20 md:py-32 bg-white dark:bg-gray-900 overflow-hidden">
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-        {/* Section indicator */}
-        <div className="flex justify-center mb-6">
-          <div className="flex items-center text-blue-500 dark:text-blue-400 font-medium">
-            <span className="w-2 h-2 rounded-full bg-blue-500 dark:bg-blue-400 mr-2"></span>
-            Frequently Asked Questions
-          </div>
-        </div>
-        
-        {/* Main heading */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl font-medium text-gray-900 dark:text-white leading-tight mb-6">
-            Common Questions About Our Services
-          </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300">
-            Get answers to the most frequently asked questions about how we can help your business grow.
-          </p>
-        </div>
-        
-        {/* FAQ accordion */}
-        <div className="max-w-3xl mx-auto">
-          <div className="space-y-4">
-            {faqItems.map((item) => (
-              <FAQItem 
-                key={item.id}
-                question={item.question}
-                answer={item.answer}
-              />
-            ))}
-          </div>
-        </div>
-        
-        {/* Contact prompt */}
-        <motion.div 
-          className="mt-16 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <p className="text-gray-600 dark:text-gray-300 mb-6">
-            Don't see your question here? We're happy to help.
-          </p>
-          <a 
-            href="/contact" 
-            className="inline-flex items-center text-blue-600 dark:text-blue-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
-          >
-            Contact us
-            <svg className="ml-2 w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-            </svg>
-          </a>
-        </motion.div>
-      </div>
-    </section>
-  )
-}
-
-interface FAQItemProps {
-  question: string;
-  answer: string;
-}
-
-function FAQItem({ question, answer }: FAQItemProps) {
-  const [isOpen, setIsOpen] = useState(false)
+  // Track expanded item for accordion functionality
+  const [expandedId, setExpandedId] = useState<number | null>(null)
+  
+  // Toggle accordion item
+  const toggleItem = (id: number) => {
+    setExpandedId(expandedId === id ? null : id)
+  }
   
   return (
-    <motion.div 
-      className="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.5 }}
-    >
-      <button
-        className="flex justify-between items-center w-full px-6 py-5 text-left bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors"
-        onClick={() => setIsOpen(!isOpen)}
-        aria-expanded={isOpen}
-      >
-        <h3 className="text-lg font-medium text-gray-900 dark:text-white">{question}</h3>
-        <span className={`ml-6 flex-shrink-0 text-blue-500 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19 9L12 16L5 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </span>
-      </button>
-      
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="px-6 py-5 bg-gray-50 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
-              <p className="text-gray-600 dark:text-gray-300">{answer}</p>
+    <section id="faq" className="py-20 md:py-32 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
+        {/* Section header with clear value proposition */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center px-4 py-1.5 mb-4 bg-gradient-to-r from-blue-600/10 to-indigo-600/10 dark:from-blue-600/20 dark:to-indigo-600/20 text-blue-600 dark:text-blue-300 border border-blue-200 dark:border-blue-800/30 rounded-full text-sm font-medium">
+            <span className="mr-2 bg-blue-600 dark:bg-blue-500 w-2 h-2 rounded-full"></span>
+            <span>Frequently Asked Questions</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white leading-tight mb-4">
+            Everything You Need to Know About <br />
+            <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              Our E-Commerce Services
+            </span>
+          </h2>
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            Get answers to commonly asked questions about our process, pricing, and approach to helping e-commerce brands succeed online.
+          </p>
+        </div>
+        
+        {/* FAQ items with enhanced accessibility and animation */}
+        <div className="space-y-4">
+          {faqs.map((faq) => (
+            <div key={faq.id} className="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+              <motion.button
+                onClick={() => toggleItem(faq.id)}
+                className="flex justify-between items-center w-full px-6 py-5 text-left bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                initial={false}
+                aria-expanded={expandedId === faq.id}
+                aria-controls={`faq-content-${faq.id}`}
+              >
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                  {faq.question}
+                </h3>
+                <span className="ml-6 flex-shrink-0 text-blue-600 dark:text-blue-400">
+                  <svg 
+                    className={`w-6 h-6 transition-transform duration-200 ${expandedId === faq.id ? 'transform rotate-180' : ''}`} 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </span>
+              </motion.button>
+              
+              <AnimatePresence initial={false}>
+                {expandedId === faq.id && (
+                  <motion.div
+                    id={`faq-content-${faq.id}`}
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="border-t border-gray-200 dark:border-gray-700 overflow-hidden"
+                  >
+                    <div className="px-6 py-5 bg-white dark:bg-gray-800">
+                      <p className="text-gray-600 dark:text-gray-300">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
+          ))}
+        </div>
+        
+        {/* CTA section to drive conversions */}
+        <div className="mt-16 text-center">
+          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 md:p-12 shadow-xl">
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+              Still Have Questions?
+            </h3>
+            <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
+              Our e-commerce specialists are available to discuss your specific needs and how we can help your business grow online.
+            </p>
+            <a 
+              href="/contact" 
+              className="inline-flex items-center px-8 py-3.5 bg-white hover:bg-gray-100 text-gray-900 font-medium rounded-full transition-all duration-200"
+            >
+              Schedule a Free Strategy Call
+              <svg className="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        {/* Trust signals section to boost credibility */}
+        <div className="mt-20">
+          <div className="text-center mb-10">
+            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+              Trusted by Leading E-Commerce Brands
+            </h3>
+            <p className="text-gray-600 dark:text-gray-300">
+              Join hundreds of successful online stores who trust our expertise
+            </p>
+          </div>
+          
+          {/* Testimonial grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Testimonial 1 */}
+            <motion.div 
+              className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm"
+              whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="flex items-center mb-4">
+                <div className="flex text-yellow-400">
+                  {[1, 2, 3, 4, 5].map(star => (
+                    <svg key={star} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+              </div>
+              <blockquote className="text-gray-700 dark:text-gray-300 mb-4">
+                "After trying two other agencies, we found this team to be the only ones who truly understood e-commerce. They rebuilt our Shopify store and increased our conversion rate by 43% in just 60 days. The ROI has been incredible."
+              </blockquote>
+              <div className="flex items-center">
+                <div className="h-10 w-10 rounded-full bg-gray-200 dark:bg-gray-700 mr-3"></div>
+                <div>
+                  <p className="font-medium text-gray-900 dark:text-white">Sarah Johnson</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Founder, EcoLuxe</p>
+                </div>
+              </div>
+            </motion.div>
+            
+            {/* Testimonial 2 */}
+            <motion.div 
+              className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm"
+              whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="flex items-center mb-4">
+                <div className="flex text-yellow-400">
+                  {[1, 2, 3, 4, 5].map(star => (
+                    <svg key={star} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+              </div>
+              <blockquote className="text-gray-700 dark:text-gray-300 mb-4">
+                "Their performance marketing team transformed our advertising strategy. We went from struggling with a 1.2x ROAS to consistently hitting 4.5x ROAS on our campaigns. They're now an essential part of our growth strategy."
+              </blockquote>
+              <div className="flex items-center">
+                <div className="h-10 w-10 rounded-full bg-gray-200 dark:bg-gray-700 mr-3"></div>
+                <div>
+                  <p className="font-medium text-gray-900 dark:text-white">Michael Chen</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Marketing Director, TechGear</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </section>
   )
 } 

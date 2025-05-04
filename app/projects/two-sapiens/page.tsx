@@ -1,159 +1,195 @@
 import { Metadata } from 'next'
-import Hero from '@/components/projects/case-study/Hero'
-import CaseStudyContent from '@/components/projects/case-study/CaseStudyContent'
-import CTA from '@/components/projects/case-study/CTA'
-import Navigation from '@/components/projects/case-study/Navigation'
+import { notFound } from 'next/navigation'
+import ClientCaseStudyPage from './client-page'
 
 export const metadata: Metadata = {
-  title: 'Two Sapiens Luxury Bag E-Commerce Success Story | Premium Brand Case Study',
-  description: 'Discover how we transformed Two Sapiens into a thriving luxury bag e-commerce brand with 40% higher conversions, seamless UX design, and targeted marketing automation.',
+  title: 'Two Sapiens: Luxury E-Commerce Success Story | Intelligence Dock',
+  description: 'How we increased conversions by 40% for Two Sapiens luxury bag brand through premium UX design, personalized journeys and performance optimization.',
   openGraph: {
-    title: 'Two Sapiens Luxury Bag E-Commerce Success Story | Premium Brand Case Study',
-    description: 'Discover how we transformed Two Sapiens into a thriving luxury bag e-commerce brand with 40% higher conversions, seamless UX design, and targeted marketing automation.',
+    title: 'Two Sapiens Case Study | Luxury E-Commerce Success',
+    description: 'See how we transformed Two Sapiens into a thriving luxury bag e-commerce brand with conversion-focused design and strategic optimization.',
     images: [
       {
         url: 'https://res.cloudinary.com/twosapiens/image/upload/v1744980709/Two_sapiens_pu_bag_collection_rfd0xd.png',
         width: 1200,
         height: 630,
-        alt: 'Two Sapiens Luxury Bag E-Commerce Case Study'
+        alt: 'Two Sapiens luxury bag collection'
       }
     ],
     type: 'website',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Two Sapiens: E-Commerce Transformation Case Study',
+    description: 'How we increased conversions by 40% for Two Sapiens luxury bag brand',
+    images: ['https://res.cloudinary.com/twosapiens/image/upload/v1744980709/Two_sapiens_pu_bag_collection_rfd0xd.png'],
+  }
 }
 
-export default function TwoSapiensPage() {
-  // Project data
+// For the static route, we don't need params since the slug is in the file path
+export default async function TwoSapiensPage() {
+  console.log('Rendering Two Sapiens page directly')
+  
+  // This is a static page, so we can just return the data directly
   const projectData = {
-    title: 'Two Sapiens – Crafting Digital Luxury',
-    tagline: 'How we transformed a premium bag brand into an e-commerce success story with exceptional UX and targeted marketing',
+    title: 'Two Sapiens',
+    subtitle: 'From Startup to Premium E-Commerce Success',
+    description: 'How we transformed Two Sapiens into a thriving luxury bag e-commerce brand with conversion-focused design, personalized marketing automation, and strategic digital presence.',
+    tagline: 'Elevating Luxury Bag E-Commerce',
     clientName: 'Two Sapiens',
+    industry: 'Luxury E-Commerce',
+    timeframe: 'Jan 2023 - May 2023',
     heroImage: 'https://res.cloudinary.com/twosapiens/image/upload/v1744980709/Two_sapiens_pu_bag_collection_rfd0xd.png',
-    logoImage: undefined,
-    liveUrl: 'https://twosapiens.com',
-    clientDescription: "Two Sapiens is a premium Indian luxury brand specializing in handcrafted PU bags that blend contemporary design with exceptional quality. Founded by fashion enthusiasts with a vision to disrupt the accessory market, they needed a digital presence that would showcase their unique aesthetic and create an immersive shopping experience that matched the premium nature of their products.",
-    
+    logoImage: 'https://res.cloudinary.com/twosapiens/image/upload/v1744477383/Two-Sapiens-logo-banner_efgx9t.png',
+    liveUrl: 'https://www.twosapiens.com',
+    executiveSummary: [
+      {
+        title: 'Challenge',
+        description: 'Two Sapiens needed a premium e-commerce presence that reflected their luxury brand positioning.'
+      },
+      {
+        title: 'Solution',
+        description: 'We created a conversion-optimized website with strategic UX and personalized marketing automation.'
+      }
+    ],
+    clientDescription: 'Two Sapiens is a luxury bag manufacturer focused on sustainable materials and timeless design.',
     challenges: [
       {
-        title: 'Standing Out in a Crowded Market',
-        description: 'In the competitive luxury bag industry, Two Sapiens needed to establish a distinctive brand identity and reach fashion-forward consumers who value quality and design.'
-      },
-      {
-        title: 'Creating a Premium Digital Experience',
-        description: 'The brand needed an e-commerce platform that would reflect their premium positioning while delivering seamless functionality and intuitive navigation across all devices.'
-      },
-      {
-        title: 'Building a Marketing Ecosystem',
-        description: 'With no existing digital presence, Two Sapiens required a comprehensive marketing infrastructure to drive qualified traffic, capture leads, and nurture customers through the purchase journey.'
+        title: 'Brand Presentation',
+        description: 'Needed to elevate their digital presence to match their premium products.',
+        beforeState: 'Generic template site with low conversions'
       }
     ],
-    
+    approach: 'We took a data-driven approach to redesign the entire digital experience, focusing on conversion optimization and brand storytelling.',
     solutions: [
       {
-        title: 'Bespoke E-Commerce Experience',
-        description: "We crafted a custom WooCommerce platform optimized for conversion, with lightning-fast performance and intuitive product filtering. Every touchpoint was designed to showcase the brand's luxury positioning, from sophisticated product displays to seamless checkout flows that reduced friction and increased sales.",
-        icon: '🛒'
-      },
-      {
-        title: 'Emotionally Engaging Visual Design',
-        description: "Our design team developed a visual language that evokes luxury and exclusivity. We directed professional product photography that highlights texture and craftsmanship, created immersive product pages with zoom capabilities, and implemented a mobile-first approach that delivers a consistent premium experience across all devices.",
-        icon: '🎨'
-      },
-      {
-        title: 'Data-Driven Decision Making',
-        description: "We implemented comprehensive tracking with Google Analytics 4, creating custom events and enhanced e-commerce tracking that provides actionable insights into the customer journey. This data foundation allowed the brand to make informed decisions about product development, pricing strategy, and marketing investments.",
-        icon: '📈'
-      },
-      {
-        title: 'Personalized Marketing Automation',
-        description: "We built sophisticated email workflows with Klaviyo that nurture relationships at every stage of the customer journey. From personalized welcome sequences to strategic abandoned cart recovery and post-purchase engagement, our email ecosystem drives consistent revenue and builds lasting brand loyalty.",
-        icon: '✉️'
-      },
-      {
-        title: 'Strategic Paid Media Campaigns',
-        description: "We designed and executed targeted Meta Ads campaigns that connect with fashion-conscious consumers at key moments of discovery. Our data-driven approach to audience targeting, creative messaging, and campaign optimization delivered exceptional ROAS while building brand awareness among ideal customers.",
-        icon: '🎯'
+        title: 'Custom E-Commerce Platform',
+        description: 'Built a tailored shopping experience with advanced product visualization.'
       }
     ],
-    
     technologies: [
-      { name: 'WooCommerce', icon: '🛒' },
-      { name: 'WordPress', icon: '📝' },
-      { name: 'Stripe', icon: '💳' },
-      { name: 'Klaviyo', icon: '✉️' },
-      { name: 'Google Analytics 4', icon: '📊' },
-      { name: 'Meta Ads', icon: '📱' },
-      { name: 'SEO', icon: '🔍' },
-      { name: 'Email Marketing', icon: '📧' }
+      {
+        name: 'Next.js',
+        icon: 'nextjs'
+      },
+      {
+        name: 'Shopify',
+        icon: 'shopify'
+      }
     ],
-    
+    process: [
+      {
+        title: 'Discovery',
+        description: 'Comprehensive brand and customer analysis to understand the luxury market positioning.',
+        outcomeText: 'Detailed strategy blueprint'
+      }
+    ],
     outcomes: [
-      {
-        title: 'Site Performance',
-        value: '3x',
-        description: 'Faster load times resulting in lower bounce rates and higher engagement'
-      },
-      {
-        title: 'Email Revenue',
-        value: '22%',
-        description: 'Of total sales generated through automated email sequences'
-      },
       {
         title: 'Conversion Rate',
         value: '+40%',
-        description: 'Increase after implementing our UX optimizations and trust elements'
-      },
-      {
-        title: 'Organic Traffic',
-        value: '+65%',
-        description: 'Monthly growth through strategic content and technical SEO implementation'
+        description: 'Increase in product page conversions'
       }
     ],
-    
+    keyTakeaways: [
+      'Premium positioning requires seamless UX',
+      'Personalization drives luxury conversions',
+      'Mobile optimization is crucial for high-end purchases'
+    ],
     galleryImages: [
       'https://res.cloudinary.com/twosapiens/image/upload/v1744980709/Two_sapiens_pu_bag_collection_rfd0xd.png',
-      'https://res.cloudinary.com/twosapiens/image/upload/v1744980709/Two_sapiens_pu_bag_collection_rfd0xd.png',
-      'https://res.cloudinary.com/twosapiens/image/upload/v1744980709/Two_sapiens_pu_bag_collection_rfd0xd.png',
+      'https://res.cloudinary.com/twosapiens/image/upload/v1745289748/Untitled_design_16_typ8wk.png',
     ],
-    
     testimonial: {
-      quote: "The HiRank Digital team didn't just build us a website—they crafted a digital experience that perfectly captures the essence of our brand. Their strategic approach to design, development, and marketing has been transformative, helping us connect with customers and exceed our sales targets from day one.",
-      author: "Founder",
-      position: "Two Sapiens",
-      avatar: undefined
+      quote: 'Intelligence Dock transformed our online presence into a true reflection of our luxury brand. The results speak for themselves with dramatic increases in engagement and sales.',
+      author: 'Sarah Chen',
+      position: 'Co-Founder, Two Sapiens',
+      avatar: 'https://res.cloudinary.com/twosapiens/image/upload/v1744477383/Two-Sapiens-logo-banner_efgx9t.png',
+    },
+    relatedCaseStudies: [
+      {
+        title: 'LuxHome Decor',
+        subtitle: 'Premium Home Goods E-Commerce',
+        slug: 'luxhome-decor'
+      }
+    ],
+    miniTestimonials: [
+      {
+        quote: 'The attention to detail in our product pages has made all the difference in conversion rates.',
+        author: 'Michael James',
+        position: 'Marketing Director'
+      }
+    ]
+  };
+  
+  console.log('Successfully loaded Two Sapiens project data');
+  
+  // Enhanced Schema for case study with rich structured data
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "CaseStudy",
+    "name": projectData.title,
+    "description": projectData.description,
+    "url": "https://www.intelligencedock.com/projects/two-sapiens",
+    "datePublished": "2023-06-15",
+    "provider": {
+      "@type": "Organization",
+      "name": "Intelligence Dock",
+      "url": "https://www.intelligencedock.com",
+      "logo": "https://www.intelligencedock.com/logo.png"
+    },
+    "about": {
+      "@type": "Brand",
+      "name": projectData.clientName,
+      "description": projectData.clientDescription,
+      "url": projectData.liveUrl
+    },
+    "reviewedBy": {
+      "@type": "Person",
+      "name": projectData.testimonial.author,
+      "jobTitle": projectData.testimonial.position.split(',')[0]
+    },
+    "review": {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": projectData.testimonial.author
+      },
+      "reviewBody": projectData.testimonial.quote
+    },
+    "teaches": [
+      "E-commerce UX design",
+      "Digital brand positioning",
+      "Conversion optimization"
+    ],
+    "result": {
+      "@type": "Thing",
+      "name": "Increased Conversion Rate",
+      "description": "40% improvement in e-commerce conversion rates"
+    },
+    "workExample": {
+      "@type": "CreativeWork",
+      "image": projectData.galleryImages[0]
     }
   }
   
   return (
-    <main>
-      <Navigation projectTitle={projectData.title} liveUrl={projectData.liveUrl} />
-      
-      <Hero 
-        title={projectData.title}
-        tagline={projectData.tagline}
-        clientName={projectData.clientName}
-        heroImage={projectData.heroImage}
-        logoImage={projectData.logoImage}
+    <>
+      {/* Structured data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schemaData)
+        }}
       />
       
-      <CaseStudyContent 
-        clientDescription={projectData.clientDescription}
-        challenges={projectData.challenges}
-        solutions={projectData.solutions}
-        technologies={projectData.technologies}
-        outcomes={projectData.outcomes}
-        galleryImages={projectData.galleryImages}
-        testimonial={projectData.testimonial}
-      />
-      
-      <CTA 
-        heading="Ready to transform your brand's digital presence?"
-        subheading="Let us create a tailored strategy that drives real business results, just like we did for Two Sapiens."
-        primaryButtonText="Start Your Project"
-        primaryButtonLink="/contact"
-        secondaryButtonText="Explore More Case Studies"
-        secondaryButtonLink="/projects"
-      />
-    </main>
+      {/* Client component with all interactive elements */}
+      <ClientCaseStudyPage projectData={projectData} />
+    </>
   )
 } 

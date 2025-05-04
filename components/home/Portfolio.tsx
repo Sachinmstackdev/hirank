@@ -72,6 +72,12 @@ const projects = [
 export default function Portfolio() {
   const [hoveredId, setHoveredId] = useState<number | null>(null)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
+  
+  // Add a direct navigation fallback
+  const handleLinkClick = (link: string) => {
+    console.log('Navigating to:', link)
+    window.location.href = link
+  }
 
   return (
     <section className="py-16 bg-white" id="portfolio">
@@ -91,10 +97,10 @@ export default function Portfolio() {
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {projects.map((project) => (
-              <Link
-                href={project.link}
+              <div
                 key={project.id}
                 className="flex-shrink-0 snap-center w-[280px] sm:w-[320px] md:w-auto mx-auto md:mx-0"
+                onClick={() => handleLinkClick(project.link)}
               >
                 <div
                   className="group bg-white border border-gray-100 hover:border-transparent transition-all duration-500 rounded-xl overflow-hidden h-[320px] relative shadow-sm hover:shadow-xl hover:-translate-y-2 cursor-pointer"
@@ -193,7 +199,7 @@ export default function Portfolio() {
                     </div>
                   </div>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>

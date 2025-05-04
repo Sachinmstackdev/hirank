@@ -86,3 +86,28 @@ body {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+@keyframes shine {
+  from {
+    left: -100%;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  to {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+.animate-shine {
+  animation: shine 2s ease-in-out infinite;
+}
+
+/* make sure to include these somewhere in your Tailwind configuration */
+@layer utilities {
+  .animate-shine {
+    animation: shine 2s ease-in-out infinite;
+  }
+}

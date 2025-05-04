@@ -22,24 +22,6 @@ const StarRating = () => (
 // Testimonial data
 const testimonials = [
   {
-    name: 'Ryan Carter',
-    handle: '@ryanc_ai',
-    text: 'IDock transformed our workflow with AI automation, saving us countless hours!',
-    avatar: '/testimonials/ryan.jpg',
-  },
-  {
-    name: 'Ethan James',
-    handle: '@ethanj',
-    text: 'From automating tasks to optimizing workflows, IDock made our business more efficient than ever by eliminating manual work and reducing errors significantly.',
-    avatar: '/testimonials/ethan.jpg',
-  },
-  {
-    name: 'Jake Mitchell',
-    handle: '@jakem',
-    text: 'IDock our daily tool to bypass averages and reveal true insights, for the whole team!',
-    avatar: '/testimonials/jake.jpg',
-  },
-  {
     name: 'Daniel Brooks',
     handle: '@dbrooks',
     text: 'Smart, fast, and intuitive—IDock simplifies AI automation like no other platform, enhancing scalability, reducing costs, and optimizing everyday operations with ease.',
