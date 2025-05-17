@@ -18,7 +18,7 @@ CREATE TABLE leads (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
   name TEXT NOT NULL,
   email TEXT NOT NULL,
-  website TEXT NOT NULL,
+  website TEXT,
   source TEXT,
   notes TEXT,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),

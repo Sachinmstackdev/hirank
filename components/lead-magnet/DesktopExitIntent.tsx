@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState, useRef } from 'react'
-import { Dialog, DialogContent } from "@/components/ui/dialog"
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import { LeadMagnetForm } from './LeadMagnetForm'
 import { X } from 'lucide-react'
 import { LeadFormData } from '@/lib/utils/supabaseHelpers'
@@ -64,6 +64,7 @@ export function DesktopExitIntent() {
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogContent className="sm:max-w-[550px] p-0 gap-0 rounded-2xl overflow-hidden border-0 shadow-2xl">
+        <DialogTitle className="sr-only">Free SEO Audit</DialogTitle>
         <div className="bg-gradient-to-r from-blue-600 to-blue-500 py-10 px-8 relative">
           {/* Decorative elements */}
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10">

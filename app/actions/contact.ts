@@ -2,6 +2,13 @@
 
 import { submitContactForm, type ContactFormData } from '@/lib/utils/supabaseHelpers'
 
+type ContactFormResult = {
+  success: boolean;
+  message?: string;
+  data?: any;
+  error?: any;
+}
+
 export async function handleContactFormSubmission(formData: ContactFormData) {
   try {
     // Use Promise.race with a timeout to avoid hanging on slow DB connections
@@ -12,12 +19,20 @@ export async function handleContactFormSubmission(formData: ContactFormData) {
         subject: formData.subject,
         massage: formData.massage
       }),
-      new Promise((_, reject) => 
+      new Promise<never>((_, reject) => 
         setTimeout(() => reject(new Error('Request timeout')), 5000)
       )
-    ]);
+    ]) as ContactFormResult;
     
-    return { success: true }
+    // Check if the result is successful
+    if (result.success) {
+      return { success: true }
+    } else {
+      return { 
+        success: false, 
+        error: result.message || 'Failed to submit contact form. Please try again.'
+      }
+    }
   } catch (error) {
     console.error('Contact form submission error:', error)
     

@@ -95,13 +95,25 @@ export default function RootLayout({
               }, 0);
             });
             
-            // Also handle Next.js route changes
+            // Safer way to handle Next.js route changes
+            // The App Router in Next.js 13+ uses a different approach for navigation events
             if (typeof window !== 'undefined') {
-              if (window.next && window.next.router) {
-                window.next.router.events.on('routeChangeComplete', () => {
+              // Wait for the document to be fully loaded
+              document.addEventListener('DOMContentLoaded', () => {
+                // Add navigation observer for modern SPA behavior
+                const navigationObserver = new MutationObserver(() => {
                   window.scrollTo(0, 0);
                 });
-              }
+                
+                // Observe changes to the main content area
+                const contentContainer = document.getElementById('__next') || document.body;
+                if (contentContainer) {
+                  navigationObserver.observe(contentContainer, { 
+                    childList: true,
+                    subtree: true 
+                  });
+                }
+              });
             }
           `}
         </Script>
