@@ -65,6 +65,13 @@ export default function RootLayout({
             `
           }} 
         />
+        
+        {/* Meta Pixel Code - NoScript fallback */}
+        <noscript>
+          <img height="1" width="1" style={{display: 'none'}}
+            src="https://www.facebook.com/tr?id=686971840630011&ev=PageView&noscript=1"
+          />
+        </noscript>
       </head>
       <body 
         className="font-sans antialiased bg-white text-gray-900"
@@ -72,6 +79,25 @@ export default function RootLayout({
       >
         {children}
         <LeadMagnet />
+        
+        {/* Meta Pixel Code */}
+        <Script 
+          id="meta-pixel" 
+          strategy="afterInteractive"
+        >
+          {`
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '686971840630011');
+            fbq('track', 'PageView');
+          `}
+        </Script>
         
         {/* More robust script to force scroll to top */}
         <Script id="scroll-to-top" strategy="afterInteractive">
