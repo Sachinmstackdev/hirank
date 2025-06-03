@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { withContentlayer } from 'next-contentlayer'
 
 const nextConfig: NextConfig = {
   /* config options here */
@@ -40,7 +41,8 @@ const nextConfig: NextConfig = {
     return config;
   },
   // Suppress hydration warnings
-  reactStrictMode: false,
+  reactStrictMode: true,
+  swcMinify: true,
   onDemandEntries: {
     // Keep the build page in memory for longer
     maxInactiveAge: 25 * 1000,
@@ -49,4 +51,4 @@ const nextConfig: NextConfig = {
   }
 };
 
-export default nextConfig;
+export default withContentlayer(nextConfig);

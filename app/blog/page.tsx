@@ -8,6 +8,8 @@ import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import { supabase } from '@/lib/supabase'
 import Head from 'next/head'
+import { allPosts } from 'contentlayer/generated'
+import { compareDesc } from 'date-fns'
 
 // Structured data for blog listing with enhanced properties
 const structuredData = {
@@ -118,6 +120,11 @@ const staggerContainer = {
   }
 };
 
+export const metadata = {
+  title: 'Blog - Your Site Name',
+  description: 'Read our latest blog posts and articles',
+}
+
 export default function BlogPage() {
   const [selectedCategory, setSelectedCategory] = useState("All")
   const [searchQuery, setSearchQuery] = useState("")
@@ -127,6 +134,10 @@ export default function BlogPage() {
   const [hasScrolled, setHasScrolled] = useState(false)
   const newsletterRef = useRef<HTMLDivElement>(null)
   const featuredPostRef = useRef<HTMLDivElement>(null)
+
+  const posts = allPosts
+    .filter((post) => post.published)
+    .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
 
   // Filter posts based on category and search query
   const filteredPosts = blogPosts.filter(post => {

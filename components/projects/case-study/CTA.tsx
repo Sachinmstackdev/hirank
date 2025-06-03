@@ -4,7 +4,7 @@ import { FC } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 
-interface CTAProps {
+export interface CTAProps {
   heading: string;
   subheading: string;
   primaryButtonText: string;
@@ -15,10 +15,10 @@ interface CTAProps {
 }
 
 const CTA: FC<CTAProps> = ({
-  heading,
-  subheading,
-  primaryButtonText,
-  primaryButtonLink,
+  heading = "Ready to Transform Your Business?",
+  subheading = "Let's discuss how we can help you achieve similar results",
+  primaryButtonText = "Start Your Project",
+  primaryButtonLink = "/contact",
   secondaryButtonText,
   secondaryButtonLink,
   trustPoints = []

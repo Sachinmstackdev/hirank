@@ -7,6 +7,7 @@ import WhyChooseUs from '@/components/home/WhyChooseUs'
 import Testimonials from '@/components/home/Testimonials'
 import BlogPosts from '@/components/home/BlogPosts'
 import FAQSection from '@/components/home/FAQSection'
+import CTASection from '@/components/home/CTASection'
 import Loading from '@/components/Loading'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
@@ -51,6 +52,7 @@ export default async function Home() {
         <Testimonials />
         <BlogPosts />
         <FAQSection />
+        <CTASection />
       </Suspense>
       <Footer />
     </main>

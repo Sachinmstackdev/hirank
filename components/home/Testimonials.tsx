@@ -49,17 +49,20 @@ const testimonials = [
   },
  
   {
-    name: 'Priya Patel',
-    handle: '@priyapatel',
-    text: 'The product photography and A+ content created by IDock elevated our brand presence across all marketplaces. Sales increased by 53% within the first quarter!',
-    avatar: 'https://res.cloudinary.com/twosapiens/image/upload/v1747893958/image_4_rpgncg.png',
+    name: 'Cebe Chakaravarthi',
+    handle: 'Deloitte | ISB, Bengaluru | https://microscopefix.vercel.app/',
+    text: 'Intelligence Dock crafted a clean, high-impact UI for my SaaS application.',
+    avatar: 'https://res.cloudinary.com/twosapiens/image/upload/v1748801423/1704819440754_jrbd3w.png',
+    rating: 5
   },
+
   {
-    name: 'James Wilson',
-    handle: '@jameswilson',
-    text: 'We struggled with inventory management until IDock implemented their automation solution. Now we save 25+ hours weekly and have virtually eliminated stockouts.',
-    avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200',
-  },
+    name: 'Devesh Singh',
+    handle: 'Founder, Eve AI  | https://eve-ai-image-genrator.vercel.app',
+    text: 'Intelligence Dock built the frontend for our AI interior design app, and it blew us away. The UI is lightning-fast, beautifully structured, and elevates the entire product experience.',
+    avatar: 'https://res.cloudinary.com/twosapiens/image/upload/v1748803107/WhatsApp_Image_2025-06-02_at_12.07.10_AM_qqrzqf.jpg',
+    rating: 5
+  },  
 ]
 
 export default function Testimonials() {

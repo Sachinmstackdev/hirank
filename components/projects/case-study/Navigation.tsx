@@ -4,9 +4,9 @@ import { FC, useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 
-interface NavigationProps {
-  projectTitle: string;
-  liveUrl: string;
+export interface NavigationProps {
+  projectTitle: string
+  liveUrl?: string
 }
 
 const Navigation: FC<NavigationProps> = ({ projectTitle, liveUrl }) => {
@@ -57,21 +57,23 @@ const Navigation: FC<NavigationProps> = ({ projectTitle, liveUrl }) => {
                   exit={{ opacity: 0, scale: 0.9 }}
                   className="hidden md:block"
                 >
-                  <Link
-                    href={liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`flex items-center space-x-1 px-4 py-2 rounded-full transition-colors duration-300 ${
-                      isScrolled 
-                        ? 'bg-blue-600 text-white hover:bg-blue-700' 
-                        : 'bg-white/10 backdrop-blur-sm text-white hover:bg-white/20'
-                    }`}
-                  >
-                    <span>Visit {projectTitle}</span>
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </Link>
+                  {liveUrl && (
+                    <Link
+                      href={liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`flex items-center space-x-1 px-4 py-2 rounded-full transition-colors duration-300 ${
+                        isScrolled 
+                          ? 'bg-blue-600 text-white hover:bg-blue-700' 
+                          : 'bg-white/10 backdrop-blur-sm text-white hover:bg-white/20'
+                      }`}
+                    >
+                      <span>Visit {projectTitle}</span>
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </Link>
+                  )}
                 </motion.div>
               </AnimatePresence>
             </div>

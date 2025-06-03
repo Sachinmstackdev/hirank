@@ -4,24 +4,24 @@ import { useRef } from 'react'
 
 const reasons = [
   {
-    title: 'Expert-Led Execution',
-    description: 'Work with senior designers, developers & marketers who\'ve scaled 50+ eCommerce and SaaS brands from scratch. Not interns. Not freelancers.',
-    icon: '✅'
-  },
-  {
-    title: 'Strategy-Tailored Builds',
-    description: 'We don\'t force templates. Every site, funnel or workflow is built with your goals, stack, and audience in mind.',
+    title: 'Senior Talent Only',
+    description: 'Your project is run by founders who\'ve built $1M+ stores. Not junior devs. Not outsourced teams. Direct access to senior builders who\'ve launched 50+ DTC brands.',
     icon: '🎯'
   },
   {
-    title: 'Real Results, Fast',
-    description: 'From 0 to 100 orders/day. From $500 to $25K/month in 4 months. We build to generate ROI — not just views.',
+    title: 'Systems That Scale',
+    description: 'We build automated systems, not band-aid fixes. Every store and funnel is engineered with SOPs, tracking, and AI tools that run without you. 90-day setup to self-running.',
+    icon: '⚡'
+  },
+  {
+    title: 'Proven Growth Model',
+    description: 'Copy our proven framework: 4.6x ROAS on cold traffic, 2.8x AOV with upsells, 40% reduction in CAC. We\'ll hand you the exact systems we used to scale stores to $80K/mo.',
     icon: '📈'
   },
   {
-    title: 'Support + Systems',
-    description: 'Beyond 24/7 help — we install automation, dashboards & AI workflows to make support... optional.',
-    icon: '🤖'
+    title: '24/7 Expert Support',
+    description: 'Slack access to our founder team. Weekly optimization calls. Real-time analytics dashboard. We\'re your growth team, not another agency vendor.',
+    icon: '🛠️'
   }
 ]
 
@@ -31,8 +31,26 @@ export default function WhyChooseUs() {
   return (
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-3">Why Brands Choose Intelligence Dock</h2>
-        <p className="text-center text-gray-600 mb-12">We don't just build — we solve, scale, and support growth from day one.</p>
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          {/* Services indicator */}
+          <div className="flex justify-center mb-6">
+            <div className="flex items-center text-blue-500 font-medium">
+              <span className="w-2 h-2 rounded-full bg-blue-500 mr-2"></span>
+              Why Choose Us
+            </div>
+          </div>
+          
+          <h2 className="font-display text-3xl sm:text-4xl md:text-[3.25rem] font-medium text-gray-900 leading-[1.4] tracking-tight">
+            <span className="block mb-2 sm:mb-4">Not another agency</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">
+              Your technical growth team
+            </span>
+          </h2>
+          <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto mt-6">
+            Skip the agency bloat. Get a proven system + senior team that scales your brand without the usual overhead.
+          </p>
+        </div>
         
         {/* Mobile/tablet swipeable container */}
         <div 
@@ -45,10 +63,10 @@ export default function WhyChooseUs() {
               key={index} 
               className="flex-shrink-0 snap-start w-[85%] sm:w-[45%] md:w-[40%] px-3"
             >
-              <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow h-full">
+              <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 h-full">
                 <div className="text-4xl mb-4">{reason.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{reason.title}</h3>
-                <p className="text-gray-600">{reason.description}</p>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">{reason.title}</h3>
+                <p className="text-gray-700 leading-relaxed">{reason.description}</p>
               </div>
             </div>
           ))}
@@ -64,7 +82,7 @@ export default function WhyChooseUs() {
               onClick={() => {
                 if (scrollContainerRef.current) {
                   const containerWidth = scrollContainerRef.current.clientWidth;
-                  const itemWidth = containerWidth * 0.85; // Adjust to match the width of items
+                  const itemWidth = containerWidth * 0.85;
                   scrollContainerRef.current.scrollTo({
                     left: index * itemWidth,
                     behavior: 'smooth'
@@ -78,10 +96,13 @@ export default function WhyChooseUs() {
         {/* Desktop grid view - hidden on mobile */}
         <div className="hidden lg:grid lg:grid-cols-4 gap-8">
           {reasons.map((reason, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow">
+            <div 
+              key={index} 
+              className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+            >
               <div className="text-4xl mb-4">{reason.icon}</div>
-              <h3 className="text-xl font-semibold mb-2">{reason.title}</h3>
-              <p className="text-gray-600">{reason.description}</p>
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">{reason.title}</h3>
+              <p className="text-gray-700 leading-relaxed">{reason.description}</p>
             </div>
           ))}
         </div>
