@@ -1,10 +1,8 @@
-'use client'
-
 import { notFound } from 'next/navigation'
 import { allPosts } from 'contentlayer/generated'
 import { Metadata } from 'next'
-import { useMDXComponent } from 'next-contentlayer/hooks'
 import Image from 'next/image'
+import BlogPostContent from '@/components/blog/BlogPostContent'
 
 interface PageProps {
   params: {
@@ -46,8 +44,6 @@ export default function BlogPost({ params }: PageProps) {
     notFound()
   }
 
-  const MDXContent = useMDXComponent(post.body.code)
-
   return (
     <article className="container mx-auto px-4 py-12">
       <div className="max-w-3xl mx-auto">
@@ -82,7 +78,7 @@ export default function BlogPost({ params }: PageProps) {
 
         {/* Post Content */}
         <div className="prose prose-lg max-w-none">
-          <MDXContent />
+          <BlogPostContent post={post} />
         </div>
 
         {/* Tags */}

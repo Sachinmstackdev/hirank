@@ -42,7 +42,6 @@ const nextConfig: NextConfig = {
   },
   // Suppress hydration warnings
   reactStrictMode: true,
-  swcMinify: true,
   onDemandEntries: {
     // Keep the build page in memory for longer
     maxInactiveAge: 25 * 1000,
