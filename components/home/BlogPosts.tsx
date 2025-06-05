@@ -8,26 +8,28 @@ import { useRef } from 'react'
 // Blog post data
 const blogPosts = [
   {
-    title: 'Leveraging AI to Transform Your Business Operations',
-    excerpt: 'Discover how artificial intelligence can streamline workflows and boost productivity in your organization.',
-    coverImage: '/blog/ai-business.jpg',
-    date: 'March 15, 2024',
-    slug: 'leveraging-ai-transform-business'
+    title: '5 Ways AI Will Change E-commerce Marketing in 2025',
+    excerpt: 'Discover how AI image generation, automated creatives, and predictive analytics are giving small brands unprecedented advantages in the e-commerce landscape.',
+    coverImage: 'https://res.cloudinary.com/twosapiens/image/upload/v1749134040/Untitled_design_18_ktiyjo.png',
+    date: 'June 5, 2025',
+    slug: 'ai-ecommerce-marketing-2025'
   },
   {
-    title: 'The Future of Automation: 2024 Trends and Beyond',
-    excerpt: 'Explore the latest automation trends and learn how they will shape the future of work.',
-    coverImage: '/blog/automation-trends.jpg',
-    date: 'March 10, 2024',
-    slug: 'future-automation-trends-2024'
+    title: 'Why You Don’t Need a Bigger Budget, You Need a Better System',
+    excerpt: 'Most brands don’t have a budget problem—they have a systems problem. Discover how performance frameworks and automation can unlock hidden profit without spending more.',
+    coverImage: 'https://res.cloudinary.com/twosapiens/image/upload/v1749132793/band_budget_gzvmfg.jpg',
+    date: 'June 5, 2025',
+    slug: 'better-system-over-bigger-budget'
   },
+
   {
-    title: 'Building Scalable Systems with Modern Architecture',
-    excerpt: 'Learn best practices for creating robust and scalable systems that grow with your business needs.',
-    coverImage: '/blog/scalable-systems.jpg',
-    date: 'March 5, 2024',
-    slug: 'building-scalable-systems'
+    title: 'How to Replace 5 Hires with One Custom Automation Stack',
+    excerpt: 'Discover how we use AI tools, workflows, and custom code to automate tasks across CRM, follow-ups, reporting, and lead nurturing—saving time and payroll costs.',
+    coverImage: 'https://res.cloudinary.com/twosapiens/image/upload/v1749133520/ai_replacing_the_5_peoples_z5fmc9.jpg',
+    date: 'July 1, 2025',
+    slug: 'automation-stack-replaces-hires'
   }
+
 ]
 
 export default function BlogPosts() {
@@ -43,7 +45,7 @@ export default function BlogPosts() {
             Blog
           </div>
         </div>
-        
+
         {/* Main heading */}
         <div className="text-center max-w-4xl mx-auto mb-8">
           <h2 className="text-3xl sm:text-4xl md:text-[3.25rem] font-medium text-gray-900 leading-[1.2] tracking-tight mb-4">
@@ -53,9 +55,9 @@ export default function BlogPosts() {
             Stay updated with trends, strategies, and case studies from our team.
           </p>
         </div>
-        
+
         {/* Blog posts scrollable container for mobile and grid for desktop */}
-        <div 
+        <div
           ref={scrollContainerRef}
           className="flex overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
@@ -90,22 +92,22 @@ export default function BlogPosts() {
 
         {/* View all link */}
         <div className="text-center">
-          <Link 
-            href="/blog" 
+          <Link
+            href="/blog"
             className="inline-flex items-center text-blue-500 hover:text-blue-600 font-medium transition-colors"
           >
             View All Articles
-            <svg 
-              className="w-5 h-5 ml-2" 
-              fill="none" 
-              stroke="currentColor" 
+            <svg
+              className="w-5 h-5 ml-2"
+              fill="none"
+              stroke="currentColor"
               viewBox="0 0 24 24"
             >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M17 8l4 4m0 0l-4 4m4-4H3" 
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
               />
             </svg>
           </Link>
@@ -133,7 +135,7 @@ function BlogCard({ title, excerpt, coverImage, date, slug }: BlogCardProps) {
       transition={{ duration: 0.5, delay: 0.1 }}
       className="h-full"
     >
-      <Link 
+      <Link
         href={`/blog/${slug}`}
         className="group block bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 h-full"
       >
@@ -156,17 +158,17 @@ function BlogCard({ title, excerpt, coverImage, date, slug }: BlogCardProps) {
           </p>
           <div className="flex items-center text-blue-500 font-medium">
             Read More
-            <svg 
-              className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" 
-              fill="none" 
-              stroke="currentColor" 
+            <svg
+              className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
               viewBox="0 0 24 24"
             >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M17 8l4 4m0 0l-4 4m4-4H3" 
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
               />
             </svg>
           </div>

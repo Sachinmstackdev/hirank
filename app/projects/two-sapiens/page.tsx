@@ -33,38 +33,73 @@ export default async function TwoSapiensPage() {
   // This is a static page, so we can just return the data directly
   const projectData = {
     title: 'Two Sapiens',
-    subtitle: 'From Startup to Premium E-Commerce Success',
-    description: 'How we transformed Two Sapiens into a thriving luxury bag e-commerce brand with conversion-focused design, personalized marketing automation, and strategic digital presence.',
-    tagline: 'Elevating Luxury Bag E-Commerce',
+    subtitle: 'Full-Scale Digital Growth for Premium Leather Brand',
+    description: 'A comprehensive digital transformation that turned Two Sapiens into a market leader through multi-channel marketing, marketplace optimization, and data-driven growth strategies.',
+    tagline: 'From Local Brand to Multi-Channel Market Leader',
     clientName: 'Two Sapiens',
-    industry: 'Luxury E-Commerce',
-    timeframe: 'Jan 2023 - May 2023',
+    industry: 'Luxury Leather Goods',
+    timeframe: 'Jan 2023 - Present',
     heroImage: 'https://res.cloudinary.com/twosapiens/image/upload/v1744980709/Two_sapiens_pu_bag_collection_rfd0xd.png',
     logoImage: 'https://res.cloudinary.com/twosapiens/image/upload/v1744477383/Two-Sapiens-logo-banner_efgx9t.png',
     liveUrl: 'https://www.twosapiens.com',
     executiveSummary: [
       {
         title: 'Challenge',
-        description: 'Two Sapiens needed a premium e-commerce presence that reflected their luxury brand positioning.'
+        description: 'Two Sapiens needed to establish a strong digital presence across multiple channels while maintaining their premium brand positioning.'
       },
       {
         title: 'Solution',
-        description: 'We created a conversion-optimized website with strategic UX and personalized marketing automation.'
+        description: 'We implemented an omnichannel strategy combining e-commerce optimization, marketplace presence, paid advertising, and email marketing.'
+      },
+      {
+        title: 'Results',
+        description: 'Achieved 300% YoY growth with successful expansion to Amazon, Flipkart, and international markets.'
       }
     ],
-    clientDescription: 'Two Sapiens is a luxury bag manufacturer focused on sustainable materials and timeless design.',
+    clientDescription: 'Two Sapiens crafts premium leather bags and accessories, combining traditional craftsmanship with modern design. Their commitment to quality and sustainability needed to be reflected across all digital touchpoints.',
     challenges: [
       {
-        title: 'Brand Presentation',
-        description: 'Needed to elevate their digital presence to match their premium products.',
-        beforeState: 'Generic template site with low conversions'
+        title: 'Brand Consistency',
+        description: 'Maintaining premium brand image across multiple marketplaces and channels.',
+        beforeState: 'Limited to single-channel sales'
+      },
+      {
+        title: 'Market Expansion',
+        description: 'Breaking into competitive marketplaces while maintaining profit margins.',
+        beforeState: 'No marketplace presence'
+      },
+      {
+        title: 'Customer Acquisition',
+        description: 'Scaling customer acquisition while keeping CAC under control.',
+        beforeState: 'High customer acquisition costs'
+      },
+      {
+        title: 'Data Integration',
+        description: 'Unifying customer data across multiple platforms for coherent marketing.',
+        beforeState: 'Fragmented customer data'
       }
     ],
-    approach: 'We took a data-driven approach to redesign the entire digital experience, focusing on conversion optimization and brand storytelling.',
+    approach: 'We developed a data-driven omnichannel strategy, focusing on brand consistency, customer experience, and performance marketing across all platforms.',
     solutions: [
       {
-        title: 'Custom E-Commerce Platform',
-        description: 'Built a tailored shopping experience with advanced product visualization.'
+        title: 'Multi-Channel E-commerce',
+        description: 'Custom-built website with marketplace integrations for Amazon and Flipkart.'
+      },
+      {
+        title: 'Performance Marketing',
+        description: 'Optimized campaigns across Google Ads, Facebook Ads, and Instagram with advanced targeting.'
+      },
+      {
+        title: 'Email Automation',
+        description: 'Personalized email sequences with 45% open rates and 12% conversion rates.'
+      },
+      {
+        title: 'Analytics Infrastructure',
+        description: 'Unified dashboard combining data from all channels for real-time decision making.'
+      },
+      {
+        title: 'Marketplace Optimization',
+        description: 'Optimized listings and A+ content on Amazon and Flipkart with brand registry.'
       }
     ],
     technologies: [
@@ -73,37 +108,90 @@ export default async function TwoSapiensPage() {
         icon: 'nextjs'
       },
       {
-        name: 'Shopify',
-        icon: 'shopify'
+        name: 'Google Analytics 4',
+        icon: 'google-analytics'
+      },
+      {
+        name: 'Meta Ads',
+        icon: 'meta'
+      },
+      {
+        name: 'Google Ads',
+        icon: 'google-ads'
+      },
+      {
+        name: 'Klaviyo',
+        icon: 'klaviyo'
+      },
+      {
+        name: 'Amazon Seller Central',
+        icon: 'amazon'
       }
     ],
     process: [
       {
-        title: 'Discovery',
-        description: 'Comprehensive brand and customer analysis to understand the luxury market positioning.',
-        outcomeText: 'Detailed strategy blueprint'
+        title: 'Research & Strategy',
+        description: 'Comprehensive market analysis and channel strategy development.',
+        outcomeText: 'Clear growth roadmap'
+      },
+      {
+        title: 'Digital Infrastructure',
+        description: 'Built scalable e-commerce and analytics foundation.',
+        outcomeText: 'Unified digital ecosystem'
+      },
+      {
+        title: 'Channel Expansion',
+        description: 'Systematic launch across marketplaces and ad platforms.',
+        outcomeText: 'Multi-channel presence'
+      },
+      {
+        title: 'Optimization & Scale',
+        description: 'Continuous improvement based on cross-channel data.',
+        outcomeText: 'Sustainable growth'
       }
     ],
     outcomes: [
       {
-        title: 'Conversion Rate',
-        value: '+40%',
-        description: 'Increase in product page conversions'
+        title: 'Revenue Growth',
+        value: '300%',
+        description: 'Year-over-year revenue increase'
+      },
+      {
+        title: 'ROAS',
+        value: '4.8x',
+        description: 'Return on ad spend across platforms'
+      },
+      {
+        title: 'Email Revenue',
+        value: '25%',
+        description: 'Of total revenue from email marketing'
+      },
+      {
+        title: 'Marketplace Sales',
+        value: '45%',
+        description: 'Revenue share from Amazon & Flipkart'
+      },
+      {
+        title: 'CAC Reduction',
+        value: '-35%',
+        description: 'Decrease in customer acquisition cost'
       }
     ],
     keyTakeaways: [
-      'Premium positioning requires seamless UX',
-      'Personalization drives luxury conversions',
-      'Mobile optimization is crucial for high-end purchases'
+      'Omnichannel presence is crucial for luxury brand growth',
+      'Data integration enables personalized customer journeys',
+      'Marketplace optimization requires brand-consistent storytelling',
+      'Email marketing drives significant ROI for premium products',
+      'Cross-channel attribution improves marketing efficiency'
     ],
     galleryImages: [
       'https://res.cloudinary.com/twosapiens/image/upload/v1744980709/Two_sapiens_pu_bag_collection_rfd0xd.png',
       'https://res.cloudinary.com/twosapiens/image/upload/v1745289748/Untitled_design_16_typ8wk.png',
     ],
     testimonial: {
-      quote: 'Intelligence Dock transformed our online presence into a true reflection of our luxury brand. The results speak for themselves with dramatic increases in engagement and sales.',
+      quote: 'Intelligence Dock has transformed Two Sapiens from a local brand to a digital-first market leader. Their comprehensive approach to digital marketing and deep understanding of premium brand positioning has been instrumental in our 300% growth.',
       author: 'Sarah Chen',
-      position: 'Co-Founder, Two Sapiens',
+      position: 'CEO & Founder, Two Sapiens',
       avatar: 'https://res.cloudinary.com/twosapiens/image/upload/v1744477383/Two-Sapiens-logo-banner_efgx9t.png',
     },
     relatedCaseStudies: [
@@ -111,13 +199,28 @@ export default async function TwoSapiensPage() {
         title: 'LuxHome Decor',
         subtitle: 'Premium Home Goods E-Commerce',
         slug: 'luxhome-decor'
+      },
+      {
+        title: 'Heritage Leather',
+        subtitle: 'Traditional Craftmanship Meets Digital Excellence',
+        slug: 'heritage-leather'
       }
     ],
     miniTestimonials: [
       {
-        quote: 'The attention to detail in our product pages has made all the difference in conversion rates.',
+        quote: 'The multi-channel strategy has exponentially increased our market reach while maintaining our premium positioning.',
         author: 'Michael James',
         position: 'Marketing Director'
+      },
+      {
+        quote: 'Our email campaigns now drive 25% of our revenue with highly engaged customers.',
+        author: 'Lisa Wong',
+        position: 'Digital Marketing Manager'
+      },
+      {
+        quote: 'The marketplace optimization has opened up entirely new customer segments for us.',
+        author: 'David Kumar',
+        position: 'E-commerce Manager'
       }
     ]
   };
@@ -128,27 +231,53 @@ export default async function TwoSapiensPage() {
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "CaseStudy",
-    "name": projectData.title,
-    "description": projectData.description,
+    "name": "Two Sapiens E-commerce Growth Case Study",
+    "description": "How we helped Two Sapiens achieve 300% revenue growth through multi-channel optimization",
     "url": "https://www.intelligencedock.com/projects/two-sapiens",
     "datePublished": "2023-06-15",
     "provider": {
       "@type": "Organization",
       "name": "Intelligence Dock",
-      "url": "https://www.intelligencedock.com",
-      "logo": "https://www.intelligencedock.com/logo.png"
+      "url": "https://www.intelligencedock.com"
     },
     "about": {
-      "@type": "Brand",
-      "name": projectData.clientName,
-      "description": projectData.clientDescription,
+      "@type": "Organization",
+      "name": "Two Sapiens",
+      "description": "Premium leather bag manufacturer",
       "url": projectData.liveUrl
     },
-    "reviewedBy": {
-      "@type": "Person",
-      "name": projectData.testimonial.author,
-      "jobTitle": projectData.testimonial.position.split(',')[0]
+    "industry": "Luxury Leather Goods",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Premium Fashion Consumers"
     },
+    "businessFunction": [
+      "E-commerce Optimization",
+      "Digital Marketing",
+      "Marketplace Integration"
+    ],
+    "result": {
+      "@type": "Thing",
+      "name": "Growth Results",
+      "description": "300% revenue growth in 12 months with 4.8x ROAS"
+    },
+    "workExample": [
+      {
+        "@type": "CreativeWork",
+        "name": "Website Redesign",
+        "image": projectData.heroImage
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Email Marketing",
+        "description": "25% of total revenue generated through email campaigns"
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Marketplace Integration",
+        "description": "45% revenue from Amazon & Flipkart"
+      }
+    ],
     "review": {
       "@type": "Review",
       "reviewRating": {
@@ -158,24 +287,20 @@ export default async function TwoSapiensPage() {
       },
       "author": {
         "@type": "Person",
-        "name": projectData.testimonial.author
+        "name": projectData.testimonial.author,
+        "jobTitle": projectData.testimonial.position
       },
       "reviewBody": projectData.testimonial.quote
     },
-    "teaches": [
-      "E-commerce UX design",
-      "Digital brand positioning",
-      "Conversion optimization"
-    ],
-    "result": {
-      "@type": "Thing",
-      "name": "Increased Conversion Rate",
-      "description": "40% improvement in e-commerce conversion rates"
-    },
-    "workExample": {
-      "@type": "CreativeWork",
-      "image": projectData.galleryImages[0]
-    }
+    "keywords": [
+      "e-commerce case study",
+      "luxury brand growth",
+      "digital marketing success",
+      "marketplace optimization",
+      "email marketing ROI",
+      "Shopify success story",
+      "premium brand digital transformation"
+    ]
   }
   
   return (

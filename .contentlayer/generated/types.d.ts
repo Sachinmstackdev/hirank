@@ -14,16 +14,16 @@ export type Post = {
   _raw: Local.RawDocumentData
   type: 'Post'
   title: string
-  description: string
   date: IsoDateTimeString
-  published: boolean
+  description: string
   image?: string | undefined
-  authors?: string[] | undefined
+  author: string
+  category: string
   tags?: string[] | undefined
+  published: boolean
   /** MDX file body */
   body: MDX
   slug: string
-  url: string
 }  
 
 /** Nested types */

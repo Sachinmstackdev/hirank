@@ -13,46 +13,45 @@ var Post = defineDocumentType(() => ({
       type: "string",
       required: true
     },
-    description: {
-      type: "string",
-      required: true
-    },
     date: {
       type: "date",
       required: true
     },
-    published: {
-      type: "boolean",
-      default: true
+    description: {
+      type: "string",
+      required: true
     },
     image: {
       type: "string",
       required: false
     },
-    authors: {
-      type: "list",
-      of: { type: "string" },
-      required: false
+    author: {
+      type: "string",
+      required: true
+    },
+    category: {
+      type: "string",
+      required: true
     },
     tags: {
       type: "list",
       of: { type: "string" },
       required: false
+    },
+    published: {
+      type: "boolean",
+      default: true
     }
   },
   computedFields: {
     slug: {
       type: "string",
       resolve: (doc) => doc._raw.flattenedPath
-    },
-    url: {
-      type: "string",
-      resolve: (doc) => `/blog/${doc._raw.flattenedPath}`
     }
   }
 }));
 var contentlayer_config_default = makeSource({
-  contentDirPath: "content/posts",
+  contentDirPath: "content",
   documentTypes: [Post],
   disableImportAliasWarning: true,
   mdx: {
@@ -82,6 +81,7 @@ var contentlayer_config_default = makeSource({
   }
 });
 export {
+  Post,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-5ZJZRW2A.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-JETN6Q47.mjs.map

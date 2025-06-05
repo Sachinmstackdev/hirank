@@ -4,7 +4,7 @@ import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import remarkGfm from 'remark-gfm'
 
-const Post = defineDocumentType(() => ({
+export const Post = defineDocumentType(() => ({
   name: 'Post',
   filePathPattern: `**/*.mdx`,
   contentType: 'mdx',
@@ -13,31 +13,34 @@ const Post = defineDocumentType(() => ({
       type: 'string',
       required: true,
     },
-    description: {
-      type: 'string',
-      required: true,
-    },
     date: {
       type: 'date',
       required: true,
     },
-    published: {
-      type: 'boolean',
-      default: true,
+    description: {
+      type: 'string',
+      required: true,
     },
     image: {
       type: 'string',
       required: false,
     },
-    authors: {
-      type: 'list',
-      of: { type: 'string' },
-      required: false,
+    author: {
+      type: 'string',
+      required: true,
+    },
+    category: {
+      type: 'string',
+      required: true,
     },
     tags: {
       type: 'list',
       of: { type: 'string' },
       required: false,
+    },
+    published: {
+      type: 'boolean',
+      default: true,
     },
   },
   computedFields: {
@@ -45,15 +48,11 @@ const Post = defineDocumentType(() => ({
       type: 'string',
       resolve: (doc) => doc._raw.flattenedPath,
     },
-    url: {
-      type: 'string',
-      resolve: (doc) => `/blog/${doc._raw.flattenedPath}`,
-    },
   },
 }))
 
 export default makeSource({
-  contentDirPath: 'content/posts',
+  contentDirPath: 'content',
   documentTypes: [Post],
   disableImportAliasWarning: true,
   mdx: {
