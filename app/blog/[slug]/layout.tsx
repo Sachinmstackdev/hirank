@@ -28,7 +28,7 @@ export async function generateMetadata(
       description: post.description,
       type: 'article',
       publishedTime: post.date,
-      authors: post.authors,
+      authors: [post.author],
     },
   }
 }

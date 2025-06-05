@@ -2,12 +2,12 @@ import { notFound } from 'next/navigation'
 import { allPosts } from 'contentlayer/generated'
 import { Metadata } from 'next'
 import Image from 'next/image'
-import BlogPostContent from '@/components/blog/BlogPostContent'
+import ClientMDXContent from '@/components/blog/ClientMDXContent'
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 function getPostFromParams(slug: string) {
@@ -19,7 +19,8 @@ function getPostFromParams(slug: string) {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const post = getPostFromParams(params.slug)
+  const { slug } = await params
+  const post = getPostFromParams(slug)
 
   if (!post) {
     return {}
@@ -32,13 +33,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export async function generateStaticParams() {
+  // Handle case where contentlayer hasn't generated any posts
+  if (!allPosts || allPosts.length === 0) {
+    console.warn('No posts found from contentlayer, returning empty params')
+    return []
+  }
+  
   return allPosts.map((post) => ({
     slug: post.slug,
   }))
 }
 
-export default function BlogPost({ params }: PageProps) {
-  const post = getPostFromParams(params.slug)
+export default async function BlogPost({ params }: PageProps) {
+  const { slug } = await params
+  const post = getPostFromParams(slug)
 
   if (!post) {
     notFound()
@@ -77,9 +85,7 @@ export default function BlogPost({ params }: PageProps) {
         )}
 
         {/* Post Content */}
-        <div className="prose prose-lg max-w-none">
-          <BlogPostContent post={post} />
-        </div>
+        <ClientMDXContent post={post} />
 
         {/* Tags */}
         {post.tags && (

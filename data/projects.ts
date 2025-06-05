@@ -46,20 +46,20 @@ export interface Project {
   results: string
   description: string
   
-  // Enhanced fields
-  industry: string[]
-  timeline: {
+  // Enhanced fields (optional for backward compatibility)
+  industry?: string[]
+  timeline?: {
     start: string
     end: string
   }
-  metrics: Metric[]
-  challenges: string[]
-  features: Feature[]
-  process: TimelineItem[]
-  gallery: string[]
-  testimonial: Testimonial
-  keyTakeaways: string[]
-  seoMeta: {
+  metrics?: Metric[]
+  challenges?: string[]
+  features?: Feature[]
+  process?: TimelineItem[]
+  gallery?: string[]
+  testimonial?: Testimonial
+  keyTakeaways?: string[]
+  seoMeta?: {
     title: string
     description: string
     keywords: string[]

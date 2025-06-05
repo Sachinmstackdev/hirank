@@ -16,9 +16,9 @@ import RelatedProjects from '@/components/projects/case-study/RelatedProjects'
 import CTABanner from '@/components/projects/case-study/CTABanner'
 
 interface ProjectPageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export async function generateStaticParams() {
@@ -28,7 +28,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
-  const project = projects.find((p: Project) => p.slug === params.slug)
+  const { slug } = await params
+  const project = projects.find((p: Project) => p.slug === slug)
   
   if (!project) {
     return {
@@ -38,19 +39,20 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   }
 
   return {
-    title: project.seoMeta.title,
-    description: project.seoMeta.description,
-    keywords: project.seoMeta.keywords,
+    title: project.seoMeta?.title || project.title,
+    description: project.seoMeta?.description || project.description,
+    keywords: project.seoMeta?.keywords || [],
     openGraph: {
-      title: project.seoMeta.title,
-      description: project.seoMeta.description,
+      title: project.seoMeta?.title || project.title,
+      description: project.seoMeta?.description || project.description,
       images: [project.image]
     }
   }
 }
 
-export default function ProjectPage({ params }: ProjectPageProps) {
-  const project = projects.find((p: Project) => p.slug === params.slug)
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const { slug } = await params
+  const project = projects.find((p: Project) => p.slug === slug)
 
   if (!project) {
     notFound()
@@ -74,28 +76,34 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         client={project.client}
         logo={project.logo}
         image={project.image}
-        metrics={project.metrics}
+        metrics={project.metrics || []}
         subtitle={project.tagline}
       />
       
       {/* Client Info & Project Overview */}
-      <ClientInfo
-        client={project.client}
-        description={project.description}
-        timeline={project.timeline}
-        industry={project.industry}
-      />
+      {project.timeline && project.industry && (
+        <ClientInfo
+          client={project.client}
+          description={project.description}
+          timeline={project.timeline}
+          industry={project.industry}
+        />
+      )}
       
       {/* Challenges */}
-      <Challenges 
-        challenges={project.challenges}
-      />
+      {project.challenges && (
+        <Challenges 
+          challenges={project.challenges}
+        />
+      )}
       
       {/* Solution Overview */}
-      <Solution 
-        solution={project.solution}
-        features={project.features}
-      />
+      {project.features && (
+        <Solution 
+          solution={project.solution}
+          features={project.features}
+        />
+      )}
       
       {/* Tech Stack */}
       <TechStack 
@@ -103,31 +111,41 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       />
       
       {/* Process Timeline */}
-      <ProcessTimeline 
-        process={project.process}
-      />
+      {project.process && (
+        <ProcessTimeline 
+          process={project.process}
+        />
+      )}
       
       {/* Results & Outcomes */}
-      <Results 
-        results={project.results}
-        metrics={project.metrics}
-      />
+      {project.metrics && (
+        <Results 
+          results={project.results}
+          metrics={project.metrics}
+        />
+      )}
       
       {/* Project Gallery */}
-      <Gallery 
-        images={project.gallery}
-        title={project.title}
-      />
+      {project.gallery && (
+        <Gallery 
+          images={project.gallery}
+          title={project.title}
+        />
+      )}
       
       {/* Client Testimonial */}
-      <Testimonial 
-        {...project.testimonial}
-      />
+      {project.testimonial && (
+        <Testimonial 
+          {...project.testimonial}
+        />
+      )}
       
       {/* Key Takeaways */}
-      <KeyTakeaways 
-        takeaways={project.keyTakeaways}
-      />
+      {project.keyTakeaways && (
+        <KeyTakeaways 
+          takeaways={project.keyTakeaways}
+        />
+      )}
       
       {/* Related Projects */}
       <RelatedProjects 

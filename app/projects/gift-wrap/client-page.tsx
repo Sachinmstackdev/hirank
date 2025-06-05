@@ -173,13 +173,10 @@ const ClientGiftWrapPage: FC<ClientGiftWrapPageProps> = ({ projectData }) => {
         <Hero 
           title={projectData.title}
           subtitle={projectData.subtitle}
-          tagline={projectData.tagline}
-          clientName={projectData.clientName}
-          industry={projectData.industry}
-          timeframe={projectData.timeframe}
-          heroImage={projectData.heroImage}
-          logoImage={projectData.logoImage}
-          executiveSummary={projectData.executiveSummary}
+          client={projectData.clientName}
+          image={projectData.heroImage}
+          logo={projectData.logoImage}
+          metrics={[]}
         />
       </div>
       
