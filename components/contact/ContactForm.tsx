@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { handleContactFormSubmission } from '@/app/actions/contact'
+import { handleContactFormSubmission } from '@/app/actions'
 
 export default function ContactForm() {
   const [error, setError] = useState<string | null>(null)

@@ -3,11 +3,7 @@
 import { FC, useState, useEffect } from 'react'
 import { motion, useScroll, useSpring } from 'framer-motion'
 import Link from 'next/link'
-import Hero from '@/components/projects/case-study/Hero'
-import CaseStudyContent from '@/components/projects/case-study/CaseStudyContent'
-import CTA from '@/components/projects/case-study/CTA'
-import Navigation from '@/components/projects/case-study/Navigation'
-import { FadeIn } from '@/components/projects/case-study/animations'
+import { Hero, CaseStudyContent, CTA, Navigation, FadeIn } from '@/components/projects/case-study'
 
 // Type definitions
 interface MetricProps {

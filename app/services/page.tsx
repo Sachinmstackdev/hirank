@@ -6,8 +6,7 @@ import ServicesList from '@/components/services/ServicesList'
 import HowWeWork from '@/components/services/HowWeWork'
 import FAQSection from '@/components/services/FAQSection'
 import CTABanner from '@/components/services/CTABanner'
-import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
+import { Header, Footer } from '@/components/layout'
 
 // Generate metadata with structured data for SEO
 export function generateMetadata(): Metadata {

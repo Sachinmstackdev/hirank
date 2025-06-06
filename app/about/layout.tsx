@@ -1,7 +1,6 @@
 'use client'
 
-import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
+import { Header, Footer } from '@/components/layout'
 
 export default function AboutLayout({
   children,

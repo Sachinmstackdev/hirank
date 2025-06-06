@@ -1,0 +1,1 @@
+export { handleContactFormSubmission } from './contact' 

@@ -1,19 +1,21 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { projects, Project } from '@/data/projects'
-import Hero from '@/components/projects/case-study/Hero'
-import Navigation from '@/components/projects/case-study/Navigation'
-import ClientInfo from '@/components/projects/case-study/ClientInfo'
-import Challenges from '@/components/projects/case-study/Challenges'
-import Solution from '@/components/projects/case-study/Solution'
-import TechStack from '@/components/projects/case-study/TechStack'
-import ProcessTimeline from '@/components/projects/case-study/ProcessTimeline'
-import Results from '@/components/projects/case-study/Results'
-import Gallery from '@/components/projects/case-study/Gallery'
-import Testimonial from '@/components/projects/case-study/Testimonial'
-import KeyTakeaways from '@/components/projects/case-study/KeyTakeaways'
-import RelatedProjects from '@/components/projects/case-study/RelatedProjects'
-import CTABanner from '@/components/projects/case-study/CTABanner'
+import { 
+  Hero, 
+  Navigation, 
+  ClientInfo, 
+  Challenges, 
+  Solution, 
+  TechStack, 
+  ProcessTimeline, 
+  Results, 
+  Gallery, 
+  Testimonial, 
+  KeyTakeaways, 
+  RelatedProjects, 
+  CTABanner 
+} from '@/components/projects/case-study'
 
 interface ProjectPageProps {
   params: Promise<{

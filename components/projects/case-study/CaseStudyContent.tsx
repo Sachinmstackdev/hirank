@@ -4,7 +4,7 @@ import { FC } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { FadeIn } from '@/components/projects/case-study/animations'
+import { FadeIn } from './animations'
 
 // Type definitions
 interface Challenge {
