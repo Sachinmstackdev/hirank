@@ -1,16 +1,34 @@
-export { default as Hero } from './Hero'
-export { default as CaseStudyContent } from './CaseStudyContent'
-export { default as CTA } from './CTA'
-export { default as Navigation } from './Navigation'
-export { default as Challenges } from './Challenges'
-export { default as Solution } from './Solution'
-export { default as TechStack } from './TechStack'
-export { default as ProcessTimeline } from './ProcessTimeline'
-export { default as Results } from './Results'
-export { default as Gallery } from './Gallery'
-export { default as KeyTakeaways } from './KeyTakeaways'
-export { default as RelatedProjects } from './RelatedProjects'
-export { default as CTABanner } from './CTABanner'
-export { default as Testimonial } from './Testimonial'
-export { default as ClientInfo } from './ClientInfo'
-export * from './animations' 
+import Hero from './Hero'
+import CaseStudyContent from './CaseStudyContent'
+import CTA from './CTA'
+import Navigation from './Navigation'
+import Challenges from './Challenges'
+import Solution from './Solution'
+import TechStack from './TechStack'
+import ProcessTimeline from './ProcessTimeline'
+import Results from './Results'
+import Gallery from './Gallery'
+import KeyTakeaways from './KeyTakeaways'
+import RelatedProjects from './RelatedProjects'
+import CTABanner from './CTABanner'
+import Testimonial from './Testimonial'
+import ClientInfo from './ClientInfo'
+export * from './animations'
+
+export {
+  Hero,
+  CaseStudyContent,
+  CTA,
+  Navigation,
+  Challenges,
+  Solution,
+  TechStack,
+  ProcessTimeline,
+  Results,
+  Gallery,
+  KeyTakeaways,
+  RelatedProjects,
+  CTABanner,
+  Testimonial,
+  ClientInfo
+} 

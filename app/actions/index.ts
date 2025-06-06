@@ -1,1 +1,3 @@
-export { handleContactFormSubmission } from './contact' 
+import { handleContactFormSubmission } from './contact'
+
+export { handleContactFormSubmission } 
