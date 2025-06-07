@@ -1,5 +1,4 @@
 import type { NextConfig } from "next";
-import { withContentlayer } from 'next-contentlayer'
 
 const nextConfig: NextConfig = {
   /* config options here */
@@ -7,7 +6,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   // Ensure pages directory routes are still accessible
-  pageExtensions: ['tsx', 'ts', 'jsx', 'js', 'md', 'mdx'],
+  pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
   images: {
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
@@ -50,4 +49,4 @@ const nextConfig: NextConfig = {
   }
 };
 
-export default withContentlayer(nextConfig);
+export default nextConfig;
