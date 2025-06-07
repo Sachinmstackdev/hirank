@@ -14,4 +14,4 @@ export { default as RelatedProjects } from './RelatedProjects';
 export { default as CTABanner } from './CTABanner';
 export { default as Testimonial } from './Testimonial';
 export { default as ClientInfo } from './ClientInfo';
-export * from './animations'; 
+export { FadeIn, scaleAnimation, fadeAnimation } from './animations'; 

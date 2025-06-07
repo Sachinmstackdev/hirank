@@ -8,7 +8,7 @@ import Testimonials from '@/components/home/Testimonials'
 import FAQSection from '@/components/home/FAQSection'
 import CTASection from '@/components/home/CTASection'
 import Loading from '@/components/Loading'
-import { Header, Footer } from '@/components/layout'
+import { Header, Footer } from '@/components/layout/index'
 import type { Metadata } from 'next'
 import { testSupabaseConnection } from '@/lib/supabaseTest'
   

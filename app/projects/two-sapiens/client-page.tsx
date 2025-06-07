@@ -3,7 +3,7 @@
 import { FC, useState, useEffect } from 'react'
 import { motion, useScroll, useSpring } from 'framer-motion'
 import Link from 'next/link'
-import { Hero, CaseStudyContent, CTA, Navigation, FadeIn } from '@/components/projects/case-study'
+import { Hero, CaseStudyContent, CTA, Navigation, FadeIn } from '@/components/projects/case-study/index'
 import Image from 'next/image'
 
 // Type definitions
