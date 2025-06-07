@@ -5,7 +5,6 @@ import Services from '@/components/home/Services'
 import Portfolio from '@/components/home/Portfolio'
 import WhyChooseUs from '@/components/home/WhyChooseUs'
 import Testimonials from '@/components/home/Testimonials'
-import BlogPosts from '@/components/home/BlogPosts'
 import FAQSection from '@/components/home/FAQSection'
 import CTASection from '@/components/home/CTASection'
 import Loading from '@/components/Loading'
@@ -40,20 +39,21 @@ export default async function Home() {
   console.log('Supabase connection test result:', isConnected)
 
   return (
-    <main className="min-h-screen">
+    <>
       <Header />
-      <Suspense fallback={<Loading />}>
-        <Hero />
-        <About />
-        <Services />
-        <Portfolio />
-        <WhyChooseUs />
-        <Testimonials />
-        <BlogPosts />
-        <FAQSection />
-        <CTASection />
-      </Suspense>
+      <main className="flex-1">
+        <Suspense fallback={<Loading />}>
+          <Hero />
+          <About />
+          <Services />
+          <Portfolio />
+          <WhyChooseUs />
+          <Testimonials />
+          <FAQSection />
+          <CTASection />
+        </Suspense>
+      </main>
       <Footer />
-    </main>
+    </>
   )
 }

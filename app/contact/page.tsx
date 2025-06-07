@@ -29,12 +29,7 @@ function ContactForm() {
     setSubmitError('')
     
     try {
-      const result = await handleContactFormSubmission({
-        fullName: formData.fullName,
-        email: formData.email,
-        subject: formData.subject,
-        massage: formData.massage
-      })
+      const result = await handleContactFormSubmission(formData)
       
       if (result.success) {
         setSubmitSuccess(true)

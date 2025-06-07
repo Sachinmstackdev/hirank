@@ -1,0 +1,265 @@
+[
+  {
+    "title": "E-commerce Platform Transformation",
+    "subtitle": "Digital Transformation Success Story",
+    "description": "A comprehensive e-commerce platform transformation that increased sales and customer satisfaction",
+    "tagline": "Revolutionizing Online Shopping Experience",
+    "clientName": "Global Retail Co.",
+    "industry": "Retail",
+    "timeframe": "2023 Q4 - 2024 Q1",
+    "heroImage": "/images/projects/ecommerce/hero.jpg",
+    "logoImage": "/images/projects/ecommerce/logo.png",
+    "liveUrl": "https://example-retail.com",
+    "executiveSummary": [
+      {
+        "title": "Project Overview",
+        "description": "Complete transformation of an outdated e-commerce platform into a modern, scalable solution"
+      },
+      {
+        "title": "Key Achievement",
+        "description": "50% increase in conversion rate and 30% reduction in cart abandonment"
+      }
+    ],
+    "clientDescription": "Global Retail Co. is a leading retail chain with over 500 physical stores and a growing online presence",
+    "challenges": [
+      {
+        "title": "Legacy System",
+        "description": "Outdated technology stack causing performance issues",
+        "beforeState": "5+ second page load times",
+        "icon": "legacy"
+      },
+      {
+        "title": "Poor Mobile Experience",
+        "description": "Non-responsive design leading to lost mobile sales",
+        "beforeState": "30% mobile conversion rate",
+        "icon": "mobile"
+      }
+    ],
+    "approach": "We implemented a phased transformation approach, focusing on critical components first while maintaining business continuity",
+    "solutions": [
+      {
+        "title": "Modern Tech Stack",
+        "description": "Implemented Next.js with headless commerce",
+        "icon": "stack"
+      },
+      {
+        "title": "Mobile-First Design",
+        "description": "Responsive design with optimized mobile checkout",
+        "icon": "mobile"
+      }
+    ],
+    "technologies": [
+      {
+        "name": "Next.js",
+        "icon": "nextjs"
+      },
+      {
+        "name": "React",
+        "icon": "react"
+      },
+      {
+        "name": "TypeScript",
+        "icon": "typescript"
+      },
+      {
+        "name": "Shopify",
+        "icon": "shopify"
+      }
+    ],
+    "process": [
+      {
+        "title": "Discovery",
+        "description": "Analyzed current system and user pain points",
+        "outcomeText": "Clear transformation roadmap",
+        "icon": "search"
+      },
+      {
+        "title": "Design",
+        "description": "Created mobile-first user experience",
+        "outcomeText": "Approved designs",
+        "icon": "design"
+      },
+      {
+        "title": "Development",
+        "description": "Iterative development with continuous feedback",
+        "outcomeText": "Production-ready platform",
+        "icon": "code"
+      }
+    ],
+    "outcomes": [
+      {
+        "title": "Conversion Rate",
+        "value": "50%",
+        "description": "Increase in conversion rate"
+      },
+      {
+        "title": "Mobile Sales",
+        "value": "75%",
+        "description": "Increase in mobile sales"
+      },
+      {
+        "title": "Page Load",
+        "value": "1.5s",
+        "description": "Average page load time"
+      }
+    ],
+    "keyTakeaways": [
+      "Mobile-first approach is crucial for e-commerce",
+      "Performance directly impacts conversion rates",
+      "Iterative development ensures business continuity"
+    ],
+    "galleryImages": [
+      "/images/projects/ecommerce/homepage.jpg",
+      "/images/projects/ecommerce/product-page.jpg",
+      "/images/projects/ecommerce/checkout.jpg"
+    ],
+    "testimonial": {
+      "quote": "The transformation exceeded our expectations, delivering remarkable results in record time",
+      "author": "Sarah Johnson",
+      "position": "CTO",
+      "company": "Global Retail Co.",
+      "avatar": "/images/testimonials/sarah-johnson.jpg\r"
+    },
+    "body": {
+      "raw": "\r\n# E-commerce Platform Transformation Case Study\r\n\r\nThis case study details the successful transformation of Global Retail Co.'s e-commerce platform, resulting in significant improvements in performance, user experience, and business metrics. ",
+      "code": "var Component=(()=>{var p=Object.create;var a=Object.defineProperty;var d=Object.getOwnPropertyDescriptor;var u=Object.getOwnPropertyNames;var g=Object.getPrototypeOf,h=Object.prototype.hasOwnProperty;var f=(t,e)=>()=>(e||t((e={exports:{}}).exports,e),e.exports),v=(t,e)=>{for(var i in e)a(t,i,{get:e[i],enumerable:!0})},r=(t,e,i,s)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let n of u(e))!h.call(t,n)&&n!==i&&a(t,n,{get:()=>e[n],enumerable:!(s=d(e,n))||s.enumerable});return t};var y=(t,e,i)=>(i=t!=null?p(g(t)):{},r(e||!t||!t.__esModule?a(i,\"default\",{value:t,enumerable:!0}):i,t)),b=t=>r(a({},\"__esModule\",{value:!0}),t);var m=f((k,c)=>{c.exports=_jsx_runtime});var C={};v(C,{default:()=>S,frontmatter:()=>x});var o=y(m()),x={title:\"E-commerce Platform Transformation\",subtitle:\"Digital Transformation Success Story\",description:\"A comprehensive e-commerce platform transformation that increased sales and customer satisfaction\",tagline:\"Revolutionizing Online Shopping Experience\",clientName:\"Global Retail Co.\",industry:\"Retail\",timeframe:\"2023 Q4 - 2024 Q1\",heroImage:\"/images/projects/ecommerce/hero.jpg\",logoImage:\"/images/projects/ecommerce/logo.png\",liveUrl:\"https://example-retail.com\",executiveSummary:[{title:\"Project Overview\",description:\"Complete transformation of an outdated e-commerce platform into a modern, scalable solution\"},{title:\"Key Achievement\",description:\"50% increase in conversion rate and 30% reduction in cart abandonment\"}],clientDescription:\"Global Retail Co. is a leading retail chain with over 500 physical stores and a growing online presence\",challenges:[{title:\"Legacy System\",description:\"Outdated technology stack causing performance issues\",beforeState:\"5+ second page load times\",icon:\"legacy\"},{title:\"Poor Mobile Experience\",description:\"Non-responsive design leading to lost mobile sales\",beforeState:\"30% mobile conversion rate\",icon:\"mobile\"}],approach:\"We implemented a phased transformation approach, focusing on critical components first while maintaining business continuity\",solutions:[{title:\"Modern Tech Stack\",description:\"Implemented Next.js with headless commerce\",icon:\"stack\"},{title:\"Mobile-First Design\",description:\"Responsive design with optimized mobile checkout\",icon:\"mobile\"}],technologies:[{name:\"Next.js\",icon:\"nextjs\"},{name:\"React\",icon:\"react\"},{name:\"TypeScript\",icon:\"typescript\"},{name:\"Shopify\",icon:\"shopify\"}],process:[{title:\"Discovery\",description:\"Analyzed current system and user pain points\",outcomeText:\"Clear transformation roadmap\",icon:\"search\"},{title:\"Design\",description:\"Created mobile-first user experience\",outcomeText:\"Approved designs\",icon:\"design\"},{title:\"Development\",description:\"Iterative development with continuous feedback\",outcomeText:\"Production-ready platform\",icon:\"code\"}],outcomes:[{title:\"Conversion Rate\",value:\"50%\",description:\"Increase in conversion rate\"},{title:\"Mobile Sales\",value:\"75%\",description:\"Increase in mobile sales\"},{title:\"Page Load\",value:\"1.5s\",description:\"Average page load time\"}],keyTakeaways:[\"Mobile-first approach is crucial for e-commerce\",\"Performance directly impacts conversion rates\",\"Iterative development ensures business continuity\"],galleryImages:[\"/images/projects/ecommerce/homepage.jpg\",\"/images/projects/ecommerce/product-page.jpg\",\"/images/projects/ecommerce/checkout.jpg\"],testimonial:{quote:\"The transformation exceeded our expectations, delivering remarkable results in record time\",author:\"Sarah Johnson\",position:\"CTO\",company:\"Global Retail Co.\",avatar:\"/images/testimonials/sarah-johnson.jpg\"}};function l(t){let e=Object.assign({h1:\"h1\",a:\"a\",span:\"span\",p:\"p\"},t.components);return(0,o.jsxs)(o.Fragment,{children:[(0,o.jsxs)(e.h1,{id:\"e-commerce-platform-transformation-case-study\",children:[(0,o.jsx)(e.a,{className:\"anchor\",href:\"#e-commerce-platform-transformation-case-study\",children:(0,o.jsx)(e.span,{className:\"icon icon-link\"})}),\"E-commerce Platform Transformation Case Study\"]}),`\n`,(0,o.jsx)(e.p,{children:\"This case study details the successful transformation of Global Retail Co.'s e-commerce platform, resulting in significant improvements in performance, user experience, and business metrics.\"})]})}function j(t={}){let{wrapper:e}=t.components||{};return e?(0,o.jsx)(e,Object.assign({},t,{children:(0,o.jsx)(l,t)})):l(t)}var S=j;return b(C);})();\n;return Component;"
+    },
+    "_id": "case-studies/ecommerce-transformation.mdx",
+    "_raw": {
+      "sourceFilePath": "case-studies/ecommerce-transformation.mdx",
+      "sourceFileName": "ecommerce-transformation.mdx",
+      "sourceFileDir": "case-studies",
+      "contentType": "mdx",
+      "flattenedPath": "case-studies/ecommerce-transformation"
+    },
+    "type": "Project",
+    "slug": "ecommerce-transformation",
+    "url": "/projects/ecommerce-transformation"
+  },
+  {
+    "title": "Sample Project",
+    "subtitle": "A Test Implementation",
+    "description": "This is a sample project to test our MDX configuration",
+    "tagline": "Building a Better Tomorrow",
+    "clientName": "Test Client",
+    "industry": "Technology",
+    "timeframe": "2024 Q1",
+    "heroImage": "/images/projects/sample/hero.jpg",
+    "logoImage": "/images/projects/sample/logo.png",
+    "liveUrl": "https://example.com",
+    "executiveSummary": [
+      {
+        "title": "Project Overview",
+        "description": "A comprehensive test of our MDX configuration and project structure"
+      },
+      {
+        "title": "Key Achievement",
+        "description": "Successfully implemented all required features and components"
+      }
+    ],
+    "clientDescription": "Test Client is a leading technology company focused on innovation",
+    "challenges": [
+      {
+        "title": "Complex Requirements",
+        "description": "Dealing with multiple data structures and components",
+        "beforeState": "Legacy system with poor organization"
+      },
+      {
+        "title": "Performance Issues",
+        "description": "Optimizing for speed and efficiency",
+        "beforeState": "Slow loading times and poor UX"
+      }
+    ],
+    "approach": "We took a systematic approach to solve complex problems",
+    "solutions": [
+      {
+        "title": "Modern Architecture",
+        "description": "Implemented a scalable and maintainable solution",
+        "icon": "architecture"
+      },
+      {
+        "title": "Performance Optimization",
+        "description": "Enhanced speed and user experience",
+        "icon": "speed"
+      }
+    ],
+    "technologies": [
+      {
+        "name": "Next.js",
+        "icon": "nextjs"
+      },
+      {
+        "name": "React",
+        "icon": "react"
+      },
+      {
+        "name": "TypeScript",
+        "icon": "typescript"
+      }
+    ],
+    "process": [
+      {
+        "title": "Discovery",
+        "description": "Understanding requirements",
+        "outcomeText": "Clear project roadmap",
+        "icon": "search"
+      },
+      {
+        "title": "Design",
+        "description": "Creating solutions",
+        "outcomeText": "Approved architecture",
+        "icon": "design"
+      },
+      {
+        "title": "Development",
+        "description": "Building features",
+        "outcomeText": "Working prototype",
+        "icon": "code"
+      }
+    ],
+    "outcomes": [
+      {
+        "title": "Performance",
+        "value": "50%",
+        "description": "Faster load times"
+      },
+      {
+        "title": "Efficiency",
+        "value": "30%",
+        "description": "Process improvement"
+      }
+    ],
+    "keyTakeaways": [
+      "Modern architecture improves scalability",
+      "Performance optimization is crucial",
+      "Clear documentation helps maintenance"
+    ],
+    "galleryImages": [
+      "/images/projects/sample/gallery1.jpg",
+      "/images/projects/sample/gallery2.jpg",
+      "/images/projects/sample/gallery3.jpg"
+    ],
+    "testimonial": {
+      "quote": "Excellent technical expertise",
+      "author": "Jane Doe",
+      "position": "CTO",
+      "company": "Test Client",
+      "avatar": "/images/testimonials/jane-doe.jpg\r"
+    },
+    "body": {
+      "raw": "\r\n# Sample Project Case Study\r\n\r\nThis is a detailed case study of our sample project implementation. The content demonstrates our MDX configuration for project case studies. ",
+      "code": "var Component=(()=>{var m=Object.create;var a=Object.defineProperty;var d=Object.getOwnPropertyDescriptor;var u=Object.getOwnPropertyNames;var g=Object.getPrototypeOf,h=Object.prototype.hasOwnProperty;var j=(t,e)=>()=>(e||t((e={exports:{}}).exports,e),e.exports),y=(t,e)=>{for(var i in e)a(t,i,{get:e[i],enumerable:!0})},r=(t,e,i,s)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let n of u(e))!h.call(t,n)&&n!==i&&a(t,n,{get:()=>e[n],enumerable:!(s=d(e,n))||s.enumerable});return t};var f=(t,e,i)=>(i=t!=null?m(g(t)):{},r(e||!t||!t.__esModule?a(i,\"default\",{value:t,enumerable:!0}):i,t)),x=t=>r(a({},\"__esModule\",{value:!0}),t);var l=j((S,c)=>{c.exports=_jsx_runtime});var D={};y(D,{default:()=>C,frontmatter:()=>v});var o=f(l()),v={title:\"Sample Project\",subtitle:\"A Test Implementation\",description:\"This is a sample project to test our MDX configuration\",tagline:\"Building a Better Tomorrow\",clientName:\"Test Client\",industry:\"Technology\",timeframe:\"2024 Q1\",heroImage:\"/images/projects/sample/hero.jpg\",logoImage:\"/images/projects/sample/logo.png\",liveUrl:\"https://example.com\",executiveSummary:[{title:\"Project Overview\",description:\"A comprehensive test of our MDX configuration and project structure\"},{title:\"Key Achievement\",description:\"Successfully implemented all required features and components\"}],clientDescription:\"Test Client is a leading technology company focused on innovation\",challenges:[{title:\"Complex Requirements\",description:\"Dealing with multiple data structures and components\",beforeState:\"Legacy system with poor organization\"},{title:\"Performance Issues\",description:\"Optimizing for speed and efficiency\",beforeState:\"Slow loading times and poor UX\"}],approach:\"We took a systematic approach to solve complex problems\",solutions:[{title:\"Modern Architecture\",description:\"Implemented a scalable and maintainable solution\",icon:\"architecture\"},{title:\"Performance Optimization\",description:\"Enhanced speed and user experience\",icon:\"speed\"}],technologies:[{name:\"Next.js\",icon:\"nextjs\"},{name:\"React\",icon:\"react\"},{name:\"TypeScript\",icon:\"typescript\"}],process:[{title:\"Discovery\",description:\"Understanding requirements\",outcomeText:\"Clear project roadmap\",icon:\"search\"},{title:\"Design\",description:\"Creating solutions\",outcomeText:\"Approved architecture\",icon:\"design\"},{title:\"Development\",description:\"Building features\",outcomeText:\"Working prototype\",icon:\"code\"}],outcomes:[{title:\"Performance\",value:\"50%\",description:\"Faster load times\"},{title:\"Efficiency\",value:\"30%\",description:\"Process improvement\"}],keyTakeaways:[\"Modern architecture improves scalability\",\"Performance optimization is crucial\",\"Clear documentation helps maintenance\"],galleryImages:[\"/images/projects/sample/gallery1.jpg\",\"/images/projects/sample/gallery2.jpg\",\"/images/projects/sample/gallery3.jpg\"],testimonial:{quote:\"Excellent technical expertise\",author:\"Jane Doe\",position:\"CTO\",company:\"Test Client\",avatar:\"/images/testimonials/jane-doe.jpg\"}};function p(t){let e=Object.assign({h1:\"h1\",a:\"a\",span:\"span\",p:\"p\"},t.components);return(0,o.jsxs)(o.Fragment,{children:[(0,o.jsxs)(e.h1,{id:\"sample-project-case-study\",children:[(0,o.jsx)(e.a,{className:\"anchor\",href:\"#sample-project-case-study\",children:(0,o.jsx)(e.span,{className:\"icon icon-link\"})}),\"Sample Project Case Study\"]}),`\n`,(0,o.jsx)(e.p,{children:\"This is a detailed case study of our sample project implementation. The content demonstrates our MDX configuration for project case studies.\"})]})}function T(t={}){let{wrapper:e}=t.components||{};return e?(0,o.jsx)(e,Object.assign({},t,{children:(0,o.jsx)(p,t)})):p(t)}var C=T;return x(D);})();\n;return Component;"
+    },
+    "_id": "projects/sample-project.mdx",
+    "_raw": {
+      "sourceFilePath": "projects/sample-project.mdx",
+      "sourceFileName": "sample-project.mdx",
+      "sourceFileDir": "projects",
+      "contentType": "mdx",
+      "flattenedPath": "projects/sample-project"
+    },
+    "type": "Project",
+    "slug": "sample-project",
+    "url": "/projects/sample-project"
+  }
+]
