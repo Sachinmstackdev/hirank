@@ -3,7 +3,7 @@
 import { useState, useEffect, Suspense } from 'react'
 import { motion } from 'framer-motion'
 import { supabase } from '@/lib/supabase'
-import { handleContactFormSubmission } from '@/app/actions/index'
+import { handleContactFormSubmission } from '@/app/actions'
 import Loading from '@/components/Loading'
 
 // Separate the form component for better performance

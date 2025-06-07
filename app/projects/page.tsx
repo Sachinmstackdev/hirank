@@ -7,7 +7,7 @@ import { useState } from 'react'
 import React from 'react'
 import { motion } from "framer-motion";
 import { projects, Project } from '@/data/projects'
-import { Header, Footer } from '@/components/layout/index'
+import { Header, Footer } from '@/components/layout'
 
 // Animation variants
 const fadeInUp = {

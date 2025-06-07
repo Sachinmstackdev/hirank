@@ -1,5 +1,136 @@
 {
   "cacheItemsMap": {
+    "projects/sample-project.mdx": {
+      "document": {
+        "title": "Sample Project",
+        "subtitle": "A Test Implementation",
+        "description": "This is a sample project to test our MDX configuration",
+        "tagline": "Building a Better Tomorrow",
+        "clientName": "Test Client",
+        "industry": "Technology",
+        "timeframe": "2024 Q1",
+        "heroImage": "/images/projects/sample/hero.jpg",
+        "logoImage": "/images/projects/sample/logo.png",
+        "liveUrl": "https://example.com",
+        "executiveSummary": [
+          {
+            "title": "Project Overview",
+            "description": "A comprehensive test of our MDX configuration and project structure"
+          },
+          {
+            "title": "Key Achievement",
+            "description": "Successfully implemented all required features and components"
+          }
+        ],
+        "clientDescription": "Test Client is a leading technology company focused on innovation",
+        "challenges": [
+          {
+            "title": "Complex Requirements",
+            "description": "Dealing with multiple data structures and components",
+            "beforeState": "Legacy system with poor organization"
+          },
+          {
+            "title": "Performance Issues",
+            "description": "Optimizing for speed and efficiency",
+            "beforeState": "Slow loading times and poor UX"
+          }
+        ],
+        "approach": "We took a systematic approach to solve complex problems",
+        "solutions": [
+          {
+            "title": "Modern Architecture",
+            "description": "Implemented a scalable and maintainable solution",
+            "icon": "architecture"
+          },
+          {
+            "title": "Performance Optimization",
+            "description": "Enhanced speed and user experience",
+            "icon": "speed"
+          }
+        ],
+        "technologies": [
+          {
+            "name": "Next.js",
+            "icon": "nextjs"
+          },
+          {
+            "name": "React",
+            "icon": "react"
+          },
+          {
+            "name": "TypeScript",
+            "icon": "typescript"
+          }
+        ],
+        "process": [
+          {
+            "title": "Discovery",
+            "description": "Understanding requirements",
+            "outcomeText": "Clear project roadmap",
+            "icon": "search"
+          },
+          {
+            "title": "Design",
+            "description": "Creating solutions",
+            "outcomeText": "Approved architecture",
+            "icon": "design"
+          },
+          {
+            "title": "Development",
+            "description": "Building features",
+            "outcomeText": "Working prototype",
+            "icon": "code"
+          }
+        ],
+        "outcomes": [
+          {
+            "title": "Performance",
+            "value": "50%",
+            "description": "Faster load times"
+          },
+          {
+            "title": "Efficiency",
+            "value": "30%",
+            "description": "Process improvement"
+          }
+        ],
+        "keyTakeaways": [
+          "Modern architecture improves scalability",
+          "Performance optimization is crucial",
+          "Clear documentation helps maintenance"
+        ],
+        "galleryImages": [
+          "/images/projects/sample/gallery1.jpg",
+          "/images/projects/sample/gallery2.jpg",
+          "/images/projects/sample/gallery3.jpg"
+        ],
+        "testimonial": {
+          "quote": "Excellent technical expertise",
+          "author": "Jane Doe",
+          "position": "CTO",
+          "company": "Test Client",
+          "avatar": "/images/testimonials/jane-doe.jpg\r"
+        },
+        "body": {
+          "raw": "\r\n# Sample Project Case Study\r\n\r\nThis is a detailed case study of our sample project implementation. The content demonstrates our MDX configuration for project case studies. ",
+          "code": "var Component=(()=>{var m=Object.create;var a=Object.defineProperty;var d=Object.getOwnPropertyDescriptor;var u=Object.getOwnPropertyNames;var g=Object.getPrototypeOf,h=Object.prototype.hasOwnProperty;var j=(t,e)=>()=>(e||t((e={exports:{}}).exports,e),e.exports),y=(t,e)=>{for(var i in e)a(t,i,{get:e[i],enumerable:!0})},r=(t,e,i,s)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let n of u(e))!h.call(t,n)&&n!==i&&a(t,n,{get:()=>e[n],enumerable:!(s=d(e,n))||s.enumerable});return t};var f=(t,e,i)=>(i=t!=null?m(g(t)):{},r(e||!t||!t.__esModule?a(i,\"default\",{value:t,enumerable:!0}):i,t)),x=t=>r(a({},\"__esModule\",{value:!0}),t);var l=j((S,c)=>{c.exports=_jsx_runtime});var D={};y(D,{default:()=>C,frontmatter:()=>v});var o=f(l()),v={title:\"Sample Project\",subtitle:\"A Test Implementation\",description:\"This is a sample project to test our MDX configuration\",tagline:\"Building a Better Tomorrow\",clientName:\"Test Client\",industry:\"Technology\",timeframe:\"2024 Q1\",heroImage:\"/images/projects/sample/hero.jpg\",logoImage:\"/images/projects/sample/logo.png\",liveUrl:\"https://example.com\",executiveSummary:[{title:\"Project Overview\",description:\"A comprehensive test of our MDX configuration and project structure\"},{title:\"Key Achievement\",description:\"Successfully implemented all required features and components\"}],clientDescription:\"Test Client is a leading technology company focused on innovation\",challenges:[{title:\"Complex Requirements\",description:\"Dealing with multiple data structures and components\",beforeState:\"Legacy system with poor organization\"},{title:\"Performance Issues\",description:\"Optimizing for speed and efficiency\",beforeState:\"Slow loading times and poor UX\"}],approach:\"We took a systematic approach to solve complex problems\",solutions:[{title:\"Modern Architecture\",description:\"Implemented a scalable and maintainable solution\",icon:\"architecture\"},{title:\"Performance Optimization\",description:\"Enhanced speed and user experience\",icon:\"speed\"}],technologies:[{name:\"Next.js\",icon:\"nextjs\"},{name:\"React\",icon:\"react\"},{name:\"TypeScript\",icon:\"typescript\"}],process:[{title:\"Discovery\",description:\"Understanding requirements\",outcomeText:\"Clear project roadmap\",icon:\"search\"},{title:\"Design\",description:\"Creating solutions\",outcomeText:\"Approved architecture\",icon:\"design\"},{title:\"Development\",description:\"Building features\",outcomeText:\"Working prototype\",icon:\"code\"}],outcomes:[{title:\"Performance\",value:\"50%\",description:\"Faster load times\"},{title:\"Efficiency\",value:\"30%\",description:\"Process improvement\"}],keyTakeaways:[\"Modern architecture improves scalability\",\"Performance optimization is crucial\",\"Clear documentation helps maintenance\"],galleryImages:[\"/images/projects/sample/gallery1.jpg\",\"/images/projects/sample/gallery2.jpg\",\"/images/projects/sample/gallery3.jpg\"],testimonial:{quote:\"Excellent technical expertise\",author:\"Jane Doe\",position:\"CTO\",company:\"Test Client\",avatar:\"/images/testimonials/jane-doe.jpg\"}};function p(t){let e=Object.assign({h1:\"h1\",a:\"a\",span:\"span\",p:\"p\"},t.components);return(0,o.jsxs)(o.Fragment,{children:[(0,o.jsxs)(e.h1,{id:\"sample-project-case-study\",children:[(0,o.jsx)(e.a,{className:\"anchor\",href:\"#sample-project-case-study\",children:(0,o.jsx)(e.span,{className:\"icon icon-link\"})}),\"Sample Project Case Study\"]}),`\n`,(0,o.jsx)(e.p,{children:\"This is a detailed case study of our sample project implementation. The content demonstrates our MDX configuration for project case studies.\"})]})}function T(t={}){let{wrapper:e}=t.components||{};return e?(0,o.jsx)(e,Object.assign({},t,{children:(0,o.jsx)(p,t)})):p(t)}var C=T;return x(D);})();\n;return Component;"
+        },
+        "_id": "projects/sample-project.mdx",
+        "_raw": {
+          "sourceFilePath": "projects/sample-project.mdx",
+          "sourceFileName": "sample-project.mdx",
+          "sourceFileDir": "projects",
+          "contentType": "mdx",
+          "flattenedPath": "projects/sample-project"
+        },
+        "type": "Project",
+        "slug": "sample-project",
+        "url": "/projects/sample-project"
+      },
+      "documentHash": "1749280390648",
+      "hasWarnings": false,
+      "documentTypeName": "Project"
+    },
     "case-studies/ecommerce-transformation.mdx": {
       "document": {
         "title": "E-commerce Platform Transformation",
@@ -139,137 +270,6 @@
         "url": "/projects/ecommerce-transformation"
       },
       "documentHash": "1749280410242",
-      "hasWarnings": false,
-      "documentTypeName": "Project"
-    },
-    "projects/sample-project.mdx": {
-      "document": {
-        "title": "Sample Project",
-        "subtitle": "A Test Implementation",
-        "description": "This is a sample project to test our MDX configuration",
-        "tagline": "Building a Better Tomorrow",
-        "clientName": "Test Client",
-        "industry": "Technology",
-        "timeframe": "2024 Q1",
-        "heroImage": "/images/projects/sample/hero.jpg",
-        "logoImage": "/images/projects/sample/logo.png",
-        "liveUrl": "https://example.com",
-        "executiveSummary": [
-          {
-            "title": "Project Overview",
-            "description": "A comprehensive test of our MDX configuration and project structure"
-          },
-          {
-            "title": "Key Achievement",
-            "description": "Successfully implemented all required features and components"
-          }
-        ],
-        "clientDescription": "Test Client is a leading technology company focused on innovation",
-        "challenges": [
-          {
-            "title": "Complex Requirements",
-            "description": "Dealing with multiple data structures and components",
-            "beforeState": "Legacy system with poor organization"
-          },
-          {
-            "title": "Performance Issues",
-            "description": "Optimizing for speed and efficiency",
-            "beforeState": "Slow loading times and poor UX"
-          }
-        ],
-        "approach": "We took a systematic approach to solve complex problems",
-        "solutions": [
-          {
-            "title": "Modern Architecture",
-            "description": "Implemented a scalable and maintainable solution",
-            "icon": "architecture"
-          },
-          {
-            "title": "Performance Optimization",
-            "description": "Enhanced speed and user experience",
-            "icon": "speed"
-          }
-        ],
-        "technologies": [
-          {
-            "name": "Next.js",
-            "icon": "nextjs"
-          },
-          {
-            "name": "React",
-            "icon": "react"
-          },
-          {
-            "name": "TypeScript",
-            "icon": "typescript"
-          }
-        ],
-        "process": [
-          {
-            "title": "Discovery",
-            "description": "Understanding requirements",
-            "outcomeText": "Clear project roadmap",
-            "icon": "search"
-          },
-          {
-            "title": "Design",
-            "description": "Creating solutions",
-            "outcomeText": "Approved architecture",
-            "icon": "design"
-          },
-          {
-            "title": "Development",
-            "description": "Building features",
-            "outcomeText": "Working prototype",
-            "icon": "code"
-          }
-        ],
-        "outcomes": [
-          {
-            "title": "Performance",
-            "value": "50%",
-            "description": "Faster load times"
-          },
-          {
-            "title": "Efficiency",
-            "value": "30%",
-            "description": "Process improvement"
-          }
-        ],
-        "keyTakeaways": [
-          "Modern architecture improves scalability",
-          "Performance optimization is crucial",
-          "Clear documentation helps maintenance"
-        ],
-        "galleryImages": [
-          "/images/projects/sample/gallery1.jpg",
-          "/images/projects/sample/gallery2.jpg",
-          "/images/projects/sample/gallery3.jpg"
-        ],
-        "testimonial": {
-          "quote": "Excellent technical expertise",
-          "author": "Jane Doe",
-          "position": "CTO",
-          "company": "Test Client",
-          "avatar": "/images/testimonials/jane-doe.jpg\r"
-        },
-        "body": {
-          "raw": "\r\n# Sample Project Case Study\r\n\r\nThis is a detailed case study of our sample project implementation. The content demonstrates our MDX configuration for project case studies. ",
-          "code": "var Component=(()=>{var m=Object.create;var a=Object.defineProperty;var d=Object.getOwnPropertyDescriptor;var u=Object.getOwnPropertyNames;var g=Object.getPrototypeOf,h=Object.prototype.hasOwnProperty;var j=(t,e)=>()=>(e||t((e={exports:{}}).exports,e),e.exports),y=(t,e)=>{for(var i in e)a(t,i,{get:e[i],enumerable:!0})},r=(t,e,i,s)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let n of u(e))!h.call(t,n)&&n!==i&&a(t,n,{get:()=>e[n],enumerable:!(s=d(e,n))||s.enumerable});return t};var f=(t,e,i)=>(i=t!=null?m(g(t)):{},r(e||!t||!t.__esModule?a(i,\"default\",{value:t,enumerable:!0}):i,t)),x=t=>r(a({},\"__esModule\",{value:!0}),t);var l=j((S,c)=>{c.exports=_jsx_runtime});var D={};y(D,{default:()=>C,frontmatter:()=>v});var o=f(l()),v={title:\"Sample Project\",subtitle:\"A Test Implementation\",description:\"This is a sample project to test our MDX configuration\",tagline:\"Building a Better Tomorrow\",clientName:\"Test Client\",industry:\"Technology\",timeframe:\"2024 Q1\",heroImage:\"/images/projects/sample/hero.jpg\",logoImage:\"/images/projects/sample/logo.png\",liveUrl:\"https://example.com\",executiveSummary:[{title:\"Project Overview\",description:\"A comprehensive test of our MDX configuration and project structure\"},{title:\"Key Achievement\",description:\"Successfully implemented all required features and components\"}],clientDescription:\"Test Client is a leading technology company focused on innovation\",challenges:[{title:\"Complex Requirements\",description:\"Dealing with multiple data structures and components\",beforeState:\"Legacy system with poor organization\"},{title:\"Performance Issues\",description:\"Optimizing for speed and efficiency\",beforeState:\"Slow loading times and poor UX\"}],approach:\"We took a systematic approach to solve complex problems\",solutions:[{title:\"Modern Architecture\",description:\"Implemented a scalable and maintainable solution\",icon:\"architecture\"},{title:\"Performance Optimization\",description:\"Enhanced speed and user experience\",icon:\"speed\"}],technologies:[{name:\"Next.js\",icon:\"nextjs\"},{name:\"React\",icon:\"react\"},{name:\"TypeScript\",icon:\"typescript\"}],process:[{title:\"Discovery\",description:\"Understanding requirements\",outcomeText:\"Clear project roadmap\",icon:\"search\"},{title:\"Design\",description:\"Creating solutions\",outcomeText:\"Approved architecture\",icon:\"design\"},{title:\"Development\",description:\"Building features\",outcomeText:\"Working prototype\",icon:\"code\"}],outcomes:[{title:\"Performance\",value:\"50%\",description:\"Faster load times\"},{title:\"Efficiency\",value:\"30%\",description:\"Process improvement\"}],keyTakeaways:[\"Modern architecture improves scalability\",\"Performance optimization is crucial\",\"Clear documentation helps maintenance\"],galleryImages:[\"/images/projects/sample/gallery1.jpg\",\"/images/projects/sample/gallery2.jpg\",\"/images/projects/sample/gallery3.jpg\"],testimonial:{quote:\"Excellent technical expertise\",author:\"Jane Doe\",position:\"CTO\",company:\"Test Client\",avatar:\"/images/testimonials/jane-doe.jpg\"}};function p(t){let e=Object.assign({h1:\"h1\",a:\"a\",span:\"span\",p:\"p\"},t.components);return(0,o.jsxs)(o.Fragment,{children:[(0,o.jsxs)(e.h1,{id:\"sample-project-case-study\",children:[(0,o.jsx)(e.a,{className:\"anchor\",href:\"#sample-project-case-study\",children:(0,o.jsx)(e.span,{className:\"icon icon-link\"})}),\"Sample Project Case Study\"]}),`\n`,(0,o.jsx)(e.p,{children:\"This is a detailed case study of our sample project implementation. The content demonstrates our MDX configuration for project case studies.\"})]})}function T(t={}){let{wrapper:e}=t.components||{};return e?(0,o.jsx)(e,Object.assign({},t,{children:(0,o.jsx)(p,t)})):p(t)}var C=T;return x(D);})();\n;return Component;"
-        },
-        "_id": "projects/sample-project.mdx",
-        "_raw": {
-          "sourceFilePath": "projects/sample-project.mdx",
-          "sourceFileName": "sample-project.mdx",
-          "sourceFileDir": "projects",
-          "contentType": "mdx",
-          "flattenedPath": "projects/sample-project"
-        },
-        "type": "Project",
-        "slug": "sample-project",
-        "url": "/projects/sample-project"
-      },
-      "documentHash": "1749280390648",
       "hasWarnings": false,
       "documentTypeName": "Project"
     }

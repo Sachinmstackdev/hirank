@@ -8,7 +8,7 @@ import Testimonials from '@/components/home/Testimonials'
 import FAQSection from '@/components/home/FAQSection'
 import CTASection from '@/components/home/CTASection'
 import Loading from '@/components/Loading'
-import { Header, Footer } from '@/components/layout/index'
+import { Header, Footer } from '@/components/layout'
 import type { Metadata } from 'next'
 import { testSupabaseConnection } from '@/lib/supabaseTest'
   
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'IDock Solutions | E-commerce Development & Digital Marketing Agency',
     description: 'Expert e-commerce development and digital marketing solutions',
-    url: 'https://IDocksolution.com',
+    url: 'https://intelligencedock.com',
     siteName: 'IDock Solutions',
     images: [
       {

@@ -17,7 +17,7 @@ import {
   RelatedProjects, 
   CTABanner,
   CaseStudyContent
-} from '@/components/projects/case-study/index'
+} from '@/components/projects/case-study'
 
 // Sample project data - in a real app, this would come from an API or database
 const projectData = {
