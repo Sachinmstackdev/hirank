@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles below this line */
+:root {
+  --color-primary-light: #ccccff;
+  --color-primary: #a3a3cc;
+  --color-secondary: #5c5c99;
+  --color-dark: #292966;
+}
+
+/* Import any additional styles from the styles/globals.css file */
+body {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-light) 100%,
+    var(--color-primary) 50%,
+    var(--color-secondary) 100%
+  );
+}
+
+.metallic-gradient {
+  background: linear-gradient(
+    135deg,
+    #ccccff 0%,
+    #a3a3cc 25%,
+    #5c5c99 50%,
+    #a3a3cc 75%,
+    #ccccff 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.wave-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.wave {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  border-radius: 38% 42%;
+  animation: wave 20s infinite linear;
+  transform-origin: 50% 50%;
+}
+
+.wave:nth-child(2) {
+  animation: wave 15s infinite linear;
+  opacity: 0.5;
+}
+
+.wave:nth-child(3) {
+  animation: wave 30s infinite linear;
+  opacity: 0.3;
+}
+
+@keyframes wave {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+@keyframes shine {
+  from {
+    left: -100%;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  to {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+.animate-shine {
+  animation: shine 2s ease-in-out infinite;
+}
+
+/* make sure to include these somewhere in your Tailwind configuration */
+@layer utilities {
+  .animate-shine {
+    animation: shine 2s ease-in-out infinite;
+  }
+}
