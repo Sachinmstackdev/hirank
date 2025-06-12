@@ -9,7 +9,7 @@ import { motion } from 'framer-motion'
 interface LeadMagnetFormProps {
   onSubmit: (data: LeadFormData) => void
   className?: string
-  formRef?: RefObject<HTMLFormElement | null>
+  formRef?: RefObject<HTMLFormElement>
   showButton?: boolean
   source?: string
 }

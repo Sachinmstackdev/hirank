@@ -24,8 +24,26 @@ const nextConfig = {
       }
     ],
   },
+  experimental: {
+    optimizeCss: true,
+  },
+  compiler: {
+    removeConsole: process.env.NODE_ENV === "production",
+  },
   webpack: (config, { isServer }) => {
-    // Add any webpack config if needed
+    // Ensure CSS is properly handled
+    config.optimization.splitChunks = {
+      ...config.optimization.splitChunks,
+      cacheGroups: {
+        ...config.optimization.splitChunks.cacheGroups,
+        styles: {
+          name: 'styles',
+          test: /\.(css|scss)$/,
+          chunks: 'all',
+          enforce: true,
+        },
+      },
+    }
     return config
   },
 }
